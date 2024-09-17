@@ -1,0 +1,250 @@
+body * {
+    scroll-margin-top: 8rem;
+}
+
+/* Grids */
+.two-col-grid {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    gap: 3rem;
+}
+
+.two-col-grid img {
+    width: 100%;
+    /* max-height: 25vh; */
+    object-fit: cover;
+}
+
+.three-col-grid {
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    justify-content: space-between;
+}
+
+.four-col-grid {
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    justify-content: space-between;
+}
+
+.right-container {
+    flex: 1;
+}
+
+/* End grids */
+
+/* Hero section */
+#project-hero {
+    padding: 10rem 20vw 3rem 20vw;
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+}
+
+main#taboom #project-hero .section-title {
+    border-color: var(--purple);
+}
+
+main#arquivei #project-hero .section-title {
+    border-color: var(--blue);
+}
+
+
+#project-hero .hero-image {
+    width: 50%;
+    /* max-height: 82vh; */
+    object-fit: cover;
+}
+
+#project-hero .project-info {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-direction: column;
+}
+
+#project-hero p.overview {
+    line-height: 2rem;
+}
+
+#project-hero p.overview span {
+    margin-right: 0.75rem;
+}
+
+/* End hero section */
+
+/* Process section */
+section#process {
+    padding: 6rem 20vw 3rem 20vw;
+    background-color: var(--cream);
+}
+
+section#process .four-col-grid-item a {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    text-decoration: underline;
+    display: block;
+    color: var(--black);
+}
+
+section#details {
+    display: flex;
+    padding: 3rem 20vw 6rem 20vw;
+    flex-direction: column;
+}
+
+/* Phases sections global styles*/
+section#discover,
+section#ideate,
+section#design,
+section#deliver,
+section#conclusion {
+    padding: 3rem 20vw;
+    background-color: var(--cream);
+}
+
+main#taboom section#discover .section-title,
+main#taboom section#ideate .section-title,
+main#taboom section#design .section-title,
+main#taboom section#deliver .section-title,
+main#taboom section#conclusion .section-title {
+    margin: 0 auto 3rem auto;
+    border-color: var(--purple);
+}
+
+main#arquivei section#discover .section-title,
+main#arquivei section#ideate .section-title,
+main#arquivei section#design .section-title,
+main#arquivei section#deliver .section-title,
+main#arquivei section#conclusion .section-title {
+    margin: 0 auto 3rem auto;
+    border-color: var(--blue);
+}
+
+/* End phase section global styles */
+
+
+/* Discover Section Styles */
+section#discover .section-title {
+    border-color: var(--purple);
+}
+
+section#discover .discover-intro {
+    margin-bottom: 3rem;
+}
+
+/* End discovery section */
+
+
+/* Responsive adjustments */
+@media (max-width: 1440px) {
+    .two-col-grid {
+        grid-template-columns: 48% 48%;
+    }
+
+    .three-col-grid {
+        grid-template-columns: 32% 32% 32%;
+    }
+
+    .four-col-grid {
+        grid-template-columns: 23% 23% 23% 23%;
+    }
+
+    #project-hero {
+        padding: 8rem 15vw 3rem 15vw;
+    }
+    section#details {
+        padding: 2rem 15vw 8rem 10vw;
+    }
+    section#process {
+        padding: 6rem 15vw 0 15vw;
+        gap: 3rem;
+    }
+    section#discover, section#ideate, section#design, section#deliver, section#conclusion{
+        padding: 3rem 15vw;
+    }
+}
+
+@media (max-width: 1260px) {
+    .two-col-grid {
+        grid-template-columns: 100%;
+        gap: 2rem;
+    }
+
+    .three-col-grid {
+        grid-template-columns: 48% 48%;
+    }
+
+    .four-col-grid {
+        grid-template-columns: 48% 48%;
+    }
+
+    #project-hero {
+        flex-direction: column;
+        padding: 10rem 10vw 3rem 10vw;
+        gap: 3rem;
+    }
+
+    #project-hero .hero-image {
+        width: 100%;
+        max-height: 40vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .two-col-grid {
+        grid-template-columns: 100%;
+    }
+
+    .three-col-grid {
+        grid-template-columns: 100%;
+    }
+
+    .four-col-grid {
+        grid-template-columns: 100%;
+    }
+
+    #project-hero {
+        padding: 8rem 8vw 5rem 8vw;
+        gap: 2rem;
+        border-bottom: 2px solid var(--black);
+    }
+
+    section#process {
+        padding: 4rem 10vw;
+    }
+    section#details {
+        padding: 5rem 8vw 5rem 8vw;
+    }
+    section#process {
+        padding: 3rem 8vw 0 8vw;
+        gap: 3rem;
+    }
+    section#discover, section#ideate, section#design, section#deliver, section#conclusion{
+        padding: 3rem 8vw;
+    }
+}
+
+@media (max-width: 480px) {
+    #project-hero {
+        padding: 3rem 8vw 5rem 7vw;
+    }
+
+    .two-col-grid,
+    .three-col-grid,
+    .four-col-grid {
+        grid-template-columns: 100%;
+    }
+
+    #project-hero .hero-image {
+        width: 100%;
+        max-height: 30vh;
+    }
+
+    section#process {
+        padding: 3rem 8vw;
+    }
+    section#discover, section#ideate, section#design, section#deliver, section#conclusion{
+        padding: 2rem 8vw;
+    }
+}

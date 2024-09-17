@@ -1,110 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Q. Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Gabriel Q.</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#fefcf7">
+    <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#fefcf7">
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Third party scripts -->
+    <script src="scripts/fslightbox.js"></script>
+    <script src="scripts/feather.js" defer></script>
+
+    <!-- Main script -->
+    <script src="scripts/main.js" defer></script>
 </head>
+
 <body>
     <header>
         <nav>
-            <div class="logo">Gabriel Q.</div>
+            <a href="#" class="logo heading-1">Gabriel Q.</a>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Career</a></li>
-                <li><a href="#">Education</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Get In Touch</a></li>
+                <li>
+                    <a class="nav-item active" href="#">Home</a>
+                </li>
+                <li>
+                    <a class="nav-item" href="#career">Career</a>
+                </li>
+                <li>
+                    <a class="nav-item" href="#education">Education</a>
+                </li>
+                <li>
+                    <a class="nav-item" href="#projects">Projects</a>
+                </li>
+                <li>
+                    <a class="primary-button" href="#contact">Get In Touch</a>
+                </li>
             </ul>
         </nav>
     </header>
+    <section id="intro" class="intro">
+        <div class="text">
+            <h1 class="m-b-2">
+                HEY<br />THERE!
+            </h1>
+            <p class="body-regular m-b-1p5">
+                I'm Gabriel, a product designer and developer
+                <br>
+                with <span class="body-bold">+7 years of experience.</span>
+            </p>
+            <a href="#projects" class="link-button">
+                <i data-feather="chevrons-down" class="icon-m"></i>
+                My Projects
 
-    <section class="intro">
-        <div class="intro-text">
-            <h1>Hey There!</h1>
-            <p>I'm Gabriel, a product designer and developer with +7 years of experience.</p>
-            <a href="#projects" class="button">My Projects</a>
+            </a>
         </div>
-        <div class="intro-image">
-            <img src="intro-image.png" alt="Intro Image">
+        <img class="intro-image" src="img/image-hero.png" alt="Intro Image">
+    </section>
+    <section id="career" class="career">
+        <div class="section-title">
+            <h2 class="heading-1">Career</h2>
+        </div>
+        <ul class="timeline">
+            <li class="job-item">
+                <span class="body-regular">Mar 2022 - Aug 2024</span>
+                <div class="circle"></div>
+                <div class="info">
+                    <h3 class="body-bold">Senior Product Designer</h3>
+                    <span class="body-medium">Trualta, Canada</span>
+                </div>
+            </li>
+            <li class="job-item">
+                <span class="body-regular">Jul 2021 - Mar 2022</span>
+                <div class="circle"></div>
+                <div class="info">
+                    <h3 class="body-bold">Senior Product Designer</h3>
+                    <span class="body-medium">Taboom, Brazil</span>
+                </div>
+            </li>
+            <li class="job-item">
+                <span class="body-regular">Sep 2020 - Jul 2021</span>
+                <div class="circle"></div>
+                <div class="info">
+                    <h3 class="body-bold">Product Designer</h3>
+                    <span class="body-medium">Arquivei, Brazil</span>
+                </div>
+            </li>
+            <li class="job-item">
+                <span class="body-regular">Jul 2016 - Sep 2020</span>
+                <div class="circle"></div>
+                <div class="info">
+                    <h3 class="body-bold">UI/UX Designer</h3>
+                    <span class="body-medium">Monitora, Brazil</span>
+                </div>
+            </li>
+        </ul>
+        <a href="https://www.linkedin.com/in/gabrielquadrado/details/experience/" target="_blank"
+            class="link-button m-t-3">
+            <i data-feather="external-link" class="icon-m"></i>
+            More information
+        </a>
+        <a href="assets/GabrielQuadrado_CV_EN_2024_v3.pdf" class="link-button m-t-1">
+            <i data-feather="download" class="icon-m"></i>
+            Download resume
+        </a>
+    </section>
+    <section id="education" class="education">
+        <div class="education-image"><img class="" src="img/image-7.png" alt="Intro Image"></div>
+        <div class="right-container">
+            <div class="section-title">
+                <h2 class="heading-1">Education</h2>
+            </div>
+            <ul class="education-content m-b-2">
+                <li class="education-item">
+                    <span class="body-normal left">Brazil</span>
+                    <h3 class="body-bold">Graphic and Product Design Specialization</h3>
+                    <span class="body-normal right">2018-2020</span>
+                </li>
+                <li class="education-item">
+                    <span class="body-normal left">Brazil</span>
+                    <h3 class="body-bold">Software Development Degree</h3>
+                    <span class="body-normal right">2015-2017</span>
+                </li>
+            </ul>
+            <div class="section-title">
+                <h2 class="heading-1">Certifications</h2>
+            </div>
+            <ul class="education-content">
+                <li class="education-item">
+                    <span class="body-normal left">IxDF</span>
+                    <h3 class="body-bold">HCI: The Foundations of UX Design</h3>
+                    <span class="body-normal right">2024</span>
+                </li>
+                <li class="education-item">
+                    <span class="body-normal left">FIAP</span>
+                    <h3 class="body-bold">Design Thinking</h3>
+                    <span class="body-normal right">2021</span>
+                </li>
+                <li class="education-item">
+                    <span class="body-normal left">FIAP</span>
+                    <h3 class="body-bold">User Experience</h3>
+                    <span class="body-normal right">2021</span>
+                </li>
+                <li class="education-item">
+                    <span class="body-normal left">Conquer</span>
+                    <h3 class="body-bold">Emotional Intelligence</h3>
+                    <span class="body-normal right">2020</span>
+                </li>
+            </ul>
+            <a href="https://www.linkedin.com/in/gabrielquadrado/details/certifications/" target="_blank"
+                class="link-button m-t-2">
+                <i data-feather="external-link" class="icon-m"></i>
+                Credentials
+            </a>
         </div>
     </section>
-
-    <section class="career">
-        <h2>Career</h2>
-        <div class="timeline">
-            <div class="job">
-                <span class="date">Mar 2022 - Aug 2024</span>
-                <h3>Senior Product Designer</h3>
-                <p>Trualta, Canada</p>
-            </div>
-            <div class="job">
-                <span class="date">Jul 2021 - Mar 2022</span>
-                <h3>Senior Product Designer</h3>
-                <p>Taboom, Brazil</p>
-            </div>
-            <div class="job">
-                <span class="date">Sep 2020 - Jul 2021</span>
-                <h3>Product Designer</h3>
-                <p>Qive, Brazil</p>
-            </div>
-            <div class="job">
-                <span class="date">Jul 2016 - Sep 2020</span>
-                <h3>UI/UX Designer</h3>
-                <p>Marlabs, Brazil</p>
-            </div>
+    <section id="projects" class="projects">
+        <div class="section-title m-b-2">
+            <h2 class="heading-1">Selected Case Studies</h2>
         </div>
-    </section>
-
-    <section class="education">
-        <h2>Education</h2>
-        <div class="education-content">
-            <div class="education-item">
-                <h3>Graphic and Product Design</h3>
-                <p>Brazil, 2018-2020</p>
-            </div>
-            <div class="education-item">
-                <h3>Software Development</h3>
-                <p>Brazil, 2015-2017</p>
-            </div>
+        <ul class="project-featured-grid m-b-3">
+            <a href="projects/taboom/taboom.html" class="project-item">
+                <div class="featured-image taboom">
+                    <img src="projects/taboom/Taboom-2.png" alt="Taboom">
+                </div>
+                <div class="info">
+                    <div class="header">
+                        <h2 class="heading-1">Taboom</h2>
+                        <div>
+                            <span class="label-3 chip" href="#contact">Mobile App Design</span>
+                            <span class="label-3 chip" href="#contact">Social Media</span>
+                        </div>
+                    </div>
+                    <h4 class="heading-2 m-t-1">Senior Product Designer</h4>
+                    <p class="body-medium">Q4 2021 - Q1 2022</p>
+                    <p class="body-regular m-t-1">We developed a real-time trivia feature for Taboom, resulting in a
+                        <span class="body-bold">390% increase in monetization</span> and boosting participation from
+                        <span class="body-bold">10 to 400 viewers</span> per trivia stream.</p>
+                </div>
+            </a>
+            <a href="projects/arquivei/arquivei.html" class="project-item">
+                <div class="featured-image arquivei">
+                    <img src="projects/arquivei/Arquivei-1.png" alt="Arquivei">
+                </div>
+                <div class="info">
+                    <div class="header">
+                        <h3 class="heading-1">Arquivei + Bayer</h3>
+                        <div>
+                            <span class="label-3 chip" href="#contact">Web App Design</span>
+                            <span class="label-3 chip" href="#contact">Fintech</span>
+                        </div>
+                    </div>
+                    <h4 class="heading-2 m-t-1">Product Designer</h4>
+                    <p class="body-medium">Q1 2021</p>
+                    <p class="body-regular m-t-1">We redesigned Bayer's soy supply chain dashboard, improving data
+                        visibility and user workflows, leading to a <span class="body-bold">120% increase in daily
+                            engagement, 30% fewer data errors, and 45% faster error resolution.</span></p>
+                </div>
+            </a>
+        </ul>
+        <div class="section-title m-b-2">
+            <h2 class="heading-1">Other Projects</h2>
         </div>
-        <h3>Courses</h3>
-        <ul>
-            <li>IxDF: HCI: The Foundations of UX Design, 2024</li>
-            <li>FIAP: Design Thinking, 2021</li>
-            <li>FIAP: User Experience, 2021</li>
-            <li>Conquer: Emotional Intelligence, 2020</li>
+        <ul class="project-grid">
+            <a href="projects/medicalbox/case.pdf" target="_blank" class="project-item">
+                <img src="projects/medicalbox/Medical-2.png" alt="medicalBox">
+                <div class="info">
+                    <h4 class="heading-2">medicalBox</h4>
+                    <span class="label-3 chip">Web + Mobile App Design</span>
+                </div>
+            </a>
+            <a href="https://www.behance.net/gallery/129336261/Opinei" target="_blank" class="project-item">
+                <img src="projects/opinei/Opinei.png" alt="Opinei">
+                <div class="info">
+                    <h4 class="heading-2">Opinei</h4>
+                    <span class="label-3 chip">Mobile App Design</span>
+                </div>
+            </a>
+            <a href="https://www.behance.net/gallery/102017273/CooperCitrus" target="_blank" class="project-item">
+                <img src="projects/coopercitrus/Coopercitrus.png" alt="Coopercitrus">
+                <div class="info">
+                    <h4 class="heading-2">Coopercitrus</h4>
+                    <span class="label-3 chip">Web + Mobile App Design</span>
+                </div>
+            </a>
+            <a href="https://www.behance.net/gallery/102020179/Graphic-Design" target="_blank" class="project-item">
+                <img src="img/Graphic.png" alt="Graphic Design">
+                <div class="info">
+                    <h4 class="heading-2">Graphic Design</h4>
+                    <span class="label-3 chip">General</span>
+                </div>
+            </a>
+            <a href="https://www.behance.net/gabrielquadrado" target="_blank" class="link-button center m-t-3">
+                <i data-feather="external-link" class="icon-m"></i>
+                Click to check all projects
+            </a>
         </ul>
     </section>
-
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
-            <div class="project-item">
-                <img src="project1.png" alt="Project 1">
-                <h4>Trualta</h4>
-                <p>Web App Design</p>
+    <footer id="contact">
+        <!-- <div class="contact-form">
+                <h3>Send A Message</h3>
+                <form action="#">
+                    <input type="text" name="name" placeholder="Enter your name">
+                    <input type="email" name="email" placeholder="Enter your email">
+                    <textarea name="message" placeholder="Type your message..."></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div> -->
+        <img class="footer-image" src="img/image-3.png" alt="Footer Image">
+        <div class="right-container">
+            <div class="section-title m-b-1">
+                <h2 class="heading-1">Contact</h2>
             </div>
-            <!-- Repeat project-item divs for other projects -->
-        </div>
-    </section>
-
-    <footer>
-        <div class="contact-form">
-            <h3>Send A Message</h3>
-            <form action="#">
-                <input type="text" name="name" placeholder="Enter your name">
-                <input type="email" name="email" placeholder="Enter your email">
-                <textarea name="message" placeholder="Type your message..."></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-        <div class="contact-info">
-            <p>Email: gabrielfquadrado@gmail.com</p>
-            <p>Location: Calgary, AB, Canada</p>
-            <p>Phone: (587) 839-0631</p>
+            <a class="contact-info link-button" href="mailto:gabrielfquadrado@gmail.com">gabrielfquadrado@gmail.com</a>
+            <p class="contact-info">(587) 839-0631</p>
+            <p class="contact-info">Calgary, AB, Canada</p>
+            <a class="contact-info link-button" href="https://www.linkedin.com/in/gabrielquadrado/" target="_blank">
+                <i data-feather="linkedin" class="icon-m"></i>
+                Linkedin
+            </a>
+            <p class="m-t-2">© 2024 Designed by Gabriel Quadrado</p>
+            </a>
         </div>
     </footer>
 </body>
+
 </html>
