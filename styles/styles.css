@@ -501,7 +501,7 @@ section#education .courses ul li {
 
 /* Projects section */
 section#projects {
-    padding: 5rem 8vw 0 5rem;
+    padding: 5rem 5vw 0 5vw;
     scroll-margin-top: 6rem;
 }
 
@@ -556,7 +556,7 @@ section#projects .project-grid .project-item {
 }
 
 section#projects .project-featured-grid .project-item .featured-image {
-    width: 85vw;
+    max-width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
