@@ -780,10 +780,14 @@ footer#contact.contact-form button {
         flex-direction: column;
     }
 
+    section#projects .project-featured-grid .project-item .featured-image {
+        min-width: 100%;
+    }
+
     section#projects .project-featured-grid .project-item img {
         width: 100%;
-        height: 24vh;
-        object-position: bottom;
+        height: 40vh;
+        object-position: top;
     }
 
     section#projects .project-grid .project-item {
