@@ -6,33 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taboom | Gabriel Q.</title>
 
+    <!-- Prevent dark mode flash -->
+    <script>
+      if (localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+
     <!-- Global Styles -->
-    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../styles/styles.css">
 
     <!-- Projects Styles -->
-    <link rel="stylesheet" href="../project-styles.css">
+    <link rel="stylesheet" href="../../styles/project-styles.css">
 
     <!-- Third party scripts -->
     <script src="../../scripts/feather.js"></script>
     <script src="../../scripts/fslightbox.js" defer></script>
+
+    <!-- Component loader -->
+    <script src="../../scripts/components.js" data-base="../../" defer></script>
 
     <!-- Main script -->
     <script src="../../scripts/main.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="../../index.html" class="logo heading-1">Gabriel Q.</a>
-            <ul>
-                <li><a class="nav-item" href="../../index.html">Home</a></li>
-                <li><a class="nav-item" href="../../index.html#career">Career</a></li>
-                <li><a class="nav-item" href="../../index.html#education">Education</a></li>
-                <li><a class="nav-item" href="../../index.html#projects">Projects</a></li>
-                <li><a class="primary-button" href="../../index.html#contact">Get In Touch</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header-component></header-component>
 
     <main>
         <section id="project-hero">
@@ -89,7 +89,7 @@
             </div>
         </section>
 
-        <img class="full-width-image" src="../../img/image-1.png" height="400">
+        <img class="full-width-image" src="../../img/image-1.png" height="400" loading="lazy">
 
         <section id="process" class="four-col-grid">
             <div class="four-col-grid-item">
@@ -136,7 +136,7 @@
             <p class="body-regular">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut malesuada sapien a nulla venenatis, quis vulputate lorem aliquet.</p>
             <div class="two-col-grid m-t-3">
                 <a data-fslightbox data-type="image" href="../../img/image-1.png">
-                    <img class="two-col-grid-item" src="../../img/image-1.png" alt="Quotes image">
+                    <img class="two-col-grid-item" src="../../img/image-1.png" alt="Quotes image" loading="lazy">
                 </a>
                 <div class="two-col-grid-item">
                     <h3 id="creator-interviews" class="heading-1 m-b-2">Lorem ipsum dolor sit amet.</h3>
@@ -171,7 +171,7 @@
                     </ul>
                 </div>
                 <a data-fslightbox data-type="image" href="../../img/image-1.png">
-                    <img class="two-col-grid-item" src="../../img/image-1.png" alt="Discovery interview">
+                    <img class="two-col-grid-item" src="../../img/image-1.png" alt="Discovery interview" loading="lazy">
                 </a>
             </div>
             <p class="body-regular m-t-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac risus nec odio posuere hendrerit. Sed aliquam <span class="body-bold">sit amet magna id scelerisque</span>.</p>
@@ -179,7 +179,7 @@
                 <h3 id="hmw-session" class="heading-1 m-b-2">Lorem ipsum dolor sit amet.</h3>
                 <p class="body-regular m-t-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 <a data-fslightbox data-type="image" href="../../img/image-1.png">
-                    <img class="two-col-grid-item full-width-image m-t-2" src="../../img/image-1.png" alt="Discovery interview">
+                    <img class="two-col-grid-item full-width-image m-t-2" src="../../img/image-1.png" alt="Discovery interview" loading="lazy">
                 </a>
                 <p class="body-regular m-t-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit:</p>
                 <ul class="m-t-1">
@@ -198,12 +198,11 @@
             </ul>
             <div class="two-col-grid">
                 <a data-fslightbox data-type="image" href="../../img/image-1.png">
-                    <img class="two-col-grid-item full-width-image m-t-2" src="../../img/image-1.png" alt="Discovery interview">
+                    <img class="two-col-grid-item full-width-image m-t-2" src="../../img/image-1.png" alt="Discovery interview" loading="lazy">
                 </a>
                 <a data-fslightbox data-type="image" href="../../img/image-1.png">
-                    <img class="two-col-grid-item full-width-image m-t-2" src="../../img/image-1.png" alt="Discovery interview">
+                    <img class="two-col-grid-item full-width-image m-t-2" src="../../img/image-1.png" alt="Discovery interview" loading="lazy">
                 </a>
-            </div>
             </div>
         </section>
 
@@ -218,7 +217,7 @@
                 <h3 id="brainwriting" class="heading-1 m-b-2">Lorem ipsum dolor sit amet.</h3>
                 <div class="two-col-grid">
                     <a data-fslightbox data-type="image" href="../../img/image-1.png">
-                        <img class="full-width-image" src="../../img/image-1.png" alt="Brainwriting board screenshot">
+                        <img class="full-width-image" src="../../img/image-1.png" alt="Brainwriting board screenshot" loading="lazy">
                     </a>
                     <div class="two-col-grid-item">
                         <p class="body-regular m-t-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -250,7 +249,7 @@
                         <p class="body-regular">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                     </div>
                     <a data-fslightbox data-type="image" href="../../img/image-1.png">
-                        <img class="two-col-grid-item" src="../../img/image-1.png" alt="Sketches and voting results">
+                        <img class="two-col-grid-item" src="../../img/image-1.png" alt="Sketches and voting results" loading="lazy">
                     </a>
                 </div>
             </div>
@@ -260,24 +259,24 @@
                 <h3 id="assumption" class="heading-1 m-b-2">Lorem ipsum dolor sit amet.</h3>
                 <div class="two-col-grid">
                     <a data-fslightbox data-type="image" href="../../img/image-1.png">
-                        <img class="two-col-grid-item" src="../../img/image-1.png" alt="Sketches and voting results">
+                        <img class="two-col-grid-item" src="../../img/image-1.png" alt="Sketches and voting results" loading="lazy">
                     </a>
                     <div class="body-regular m-t-1">
                         <p class="body-regular">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         <p class="body-regular m-t-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         <div class="m-t-2 m-b-2">
                             <div class="m-t-2">
-                                <i data-feather="zap" class="icon-xl"></i><br>
+                                <i data-feather="zap" class="icon-xl" aria-hidden="true"></i><br>
                                 <span class="body-bold">Lorem ipsum dolor sit amet</span><br>
                                 <p class="body-regular">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                             </div>
                             <div class="m-t-2">
-                                <i data-feather="gift" class="icon-xl"></i><br>
+                                <i data-feather="gift" class="icon-xl" aria-hidden="true"></i><br>
                                 <span class="body-bold">Lorem ipsum dolor sit amet</span><br>
                                 <p class="body-regular">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                             </div>
                             <div class="m-t-2">
-                                <i data-feather="trending-up" class="icon-xl"></i><br>
+                                <i data-feather="trending-up" class="icon-xl" aria-hidden="true"></i><br>
                                 <span class="body-bold">Lorem ipsum dolor sit amet</span><br>
                                 <p class="body-regular">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                             </div>
@@ -295,7 +294,6 @@
             </div>
             <p class="body-regular m-b-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <p class="body-regular m-b-1">Lorem ipsum dolor sit amet consectetur adipiscing elit. Integer ac risus nec odio posuere hendrerit.</p>
-            </div>
             <div class="m-t-3">
                 <h3 id="wireframes" class="heading-1 m-b-2">Lorem ipsum dolor sit amet.</h3>
                 <p class="body-regular m-b-1">
@@ -308,16 +306,14 @@
                 </div>
             </div>
             <a data-fslightbox data-type="image" href="../../img/image-1.png">
-                <img class="full-width-image m-t-2" src="../../img/image-1.png" alt="Discovery interview">
+                <img class="full-width-image m-t-2" src="../../img/image-1.png" alt="Discovery interview" loading="lazy">
             </a>
-            <p class="body-regular m-t-2">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit.
+            <p class="body-regular m-t-2">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
             <p class="body-regular m-t-1">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
             <p class="body-regular m-t-1">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-            </p>
             <div class="two-col-grid m-t-3">
                 <a data-fslightbox data-type="image" href="../../img/image-1.png">
-                    <img class="two-col-grid-item m-t-2" src="../../img/image-1.png" alt="Discovery interview">
+                    <img class="two-col-grid-item m-t-2" src="../../img/image-1.png" alt="Discovery interview" loading="lazy">
                 </a>
                 <div>
                     <h3 id="user-validation" class="heading-1 m-b-2">Lorem ipsum dolor sit amet.</h3>
@@ -338,7 +334,7 @@
                 </div>
             </div>
             <a data-fslightbox data-type="image" href="../../img/image-1.png">
-                <img class="full-width-image m-t-2" src="../../img/image-1.png" alt="Discovery interview">
+                <img class="full-width-image m-t-2" src="../../img/image-1.png" alt="Discovery interview" loading="lazy">
             </a>
             <p class="body-regular m-b-1">
                 Lorem ipsum dolor sit amet consectetur adipiscing elit:
@@ -378,7 +374,7 @@
                     Lorem ipsum dolor sit amet consectetur adipiscing elit.
                 </p>
                 <a data-fslightbox data-type="image" href="../../img/image-1.png">
-                    <img class="full-width-image m-t-2" src="../../img/image-1.png" alt="Discovery interview">
+                    <img class="full-width-image m-t-2" src="../../img/image-1.png" alt="Discovery interview" loading="lazy">
                 </a>
             </div>
             <div class="m-t-3">
@@ -387,8 +383,8 @@
                 <p class="body-regular m-b-1">
                     Lorem ipsum dolor sit amet consectetur adipiscing elit.
                 </p>
-                <a data-fslightbox data-type="image" href="../../img/image-1.png"></a>
-                <img class="full-width-image m-t-2" src="../../img/image-1.png" alt="Discovery interview">
+                <a data-fslightbox data-type="image" href="../../img/image-1.png">
+                    <img class="full-width-image m-t-2" src="../../img/image-1.png" alt="Discovery interview" loading="lazy">
                 </a>
                 <div class="three-col-grid m-t-3">
                     <div class="body-regular">
@@ -475,32 +471,7 @@
 
     </main>
 
-    <footer id="contact">
-        <!-- <div class="contact-form">
-            <h3>Send A Message</h3>
-            <form action="#">
-                <input type="text" name="name" placeholder="Enter your name">
-                <input type="email" name="email" placeholder="Enter your email">
-                <textarea name="message" placeholder="Type your message..."></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </div> -->
-        <img class="footer-image" src="../../img/image-3.png" alt="Footer Image">
-        <div class="right-container">
-            <div class="section-title m-b-1">
-                <h2 class="heading-1">Contact</h2>
-            </div>
-            <a class="contact-info link-button" href="mailto:gabrielfquadrado@gmail.com">gabrielfquadrado@gmail.com</a>
-            <p class="contact-info">(587) 839-0631</p>
-            <p class="contact-info">Calgary, AB, Canada</p>
-            <a class="contact-info link-button" href="https://www.linkedin.com/in/gabrielquadrado/" target="_blank">
-                <i data-feather="linkedin" class="icon-m"></i>
-                Linkedin
-            </a>
-            <p class="m-t-2">© 2024 Designed by Gabriel Quadrado</p>
-            </a>
-        </div>
-    </footer>
+    <footer-component></footer-component>
 </body>
 
 </html>

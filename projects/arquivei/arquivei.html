@@ -13,7 +13,21 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arquivei | Gabriel Q.</title>
+    <title>Arquivei + Bayer — Case Study | Gabriel Q.</title>
+    <meta name="description" content="Redesigning Bayer's soy supply chain dashboard led to 120% increase in daily engagement, 30% fewer data errors, and 45% faster error resolution.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Arquivei + Bayer — Case Study | Gabriel Q.">
+    <meta property="og:description" content="Dashboard redesign that delivered 120% more daily engagement and 30% fewer data errors for Bayer's soy supply chain.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="Arquivei-1.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arquivei + Bayer — Case Study | Gabriel Q.">
+    <meta name="twitter:description" content="Dashboard redesign that delivered 120% more daily engagement and 30% fewer data errors.">
+    <meta name="twitter:image" content="Arquivei-1.png">
+
     <link rel="apple-touch-icon" sizes="180x180" href="../../../../img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon/favicon-16x16.png">
@@ -23,6 +37,14 @@
     <meta name="msapplication-TileColor" content="#fefcf7">
     <meta name="msapplication-config" content="/../../img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#fefcf7">
+
+    <!-- Prevent dark mode flash -->
+    <script>
+      if (localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="../../styles/styles.css">
@@ -34,23 +56,15 @@
     <script src="../../scripts/feather.js"></script>
     <script src="../../scripts/fslightbox.js" defer></script>
 
+    <!-- Component loader -->
+    <script src="../../scripts/components.js" data-base="../../" defer></script>
+
     <!-- Main script -->
     <script src="../../scripts/main.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="../../index.html" class="logo heading-1">Gabriel Q.</a>
-            <ul>
-                <li><a class="nav-item" href="../../index.html">Home</a></li>
-                <li><a class="nav-item" href="../../index.html#career">Career</a></li>
-                <li><a class="nav-item" href="../../index.html#education">Education</a></li>
-                <li><a class="nav-item" href="../../index.html#projects">Projects</a></li>
-                <li><a class="primary-button" href="../../index.html#contact">Get In Touch</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header-component></header-component>
 
     <main id="arquivei">
         <section id="project-hero">
@@ -139,7 +153,7 @@
             </div>
         </section>
 
-        <img class="full-width-image" src="Full-width.png" height="400">
+        <img class="full-width-image" src="Full-width.png" height="400" loading="lazy">
 
         <section id="process" class="four-col-grid">
             <div class="four-col-grid-item">
@@ -186,7 +200,7 @@
                 analysis from past reports.</p>
             <div class="two-col-grid m-t-3">
                 <a data-fslightbox data-type="image" href="interviews.png">
-                    <img class="two-col-grid-item" src="interviews.png" alt="Quotes image">
+                    <img class="two-col-grid-item" src="interviews.png" alt="Quotes image" loading="lazy">
                 </a>
                 <div class="two-col-grid-item">
                     <h3 id="interviews" class="heading-1 m-b-1">User Interviews</h3>
@@ -266,7 +280,7 @@
                     </ul>
                 </div>
                 <a data-fslightbox data-type="image" href="survey.png">
-                    <img class="two-col-grid-item" src="survey.png" alt="Discovery interview">
+                    <img class="two-col-grid-item" src="survey.png" alt="Discovery interview" loading="lazy">
                 </a>
             </div>
             <div class="m-t-3">
@@ -277,13 +291,13 @@
                     all teams.</p>
                 <a data-fslightbox data-type="image" href="problem-mapping.png">
                     <img class="two-col-grid-item full-width-image m-t-2" src="problem-mapping.png"
-                        alt="Discovery interview">
+                        alt="Discovery interview" loading="lazy">
                 </a>
                 <p class="body-regular m-t-3">Opportunities identified during the session included:</p>
                 <ul class="three-col-grid m-t-1">
                     <div class="body-regular">
                         <span class="heading-2">
-                            <i data-feather="layout" class="icon-xl"></i><br>
+                            <i data-feather="layout" class="icon-xl" aria-hidden="true"></i><br>
                             Simplifying the Dashboard
                         </span>
                         <p class="body-regular">
@@ -294,7 +308,7 @@
                     </div>
                     <div class="body-regular">
                         <span class="heading-2">
-                            <i data-feather="alert-octagon" class="icon-xl"></i><br>
+                            <i data-feather="alert-octagon" class="icon-xl" aria-hidden="true"></i><br>
                             Automating Error Detection
                         </span>
                         <p class="body-regular">
@@ -305,7 +319,7 @@
                     </div>
                     <div class="body-regular">
                         <span class="heading-2">
-                            <i data-feather="eye" class="icon-xl"></i><br>
+                            <i data-feather="eye" class="icon-xl" aria-hidden="true"></i><br>
                             Improving Data Accuracy and Visibility
                         </span>
                         <p class="body-regular">
@@ -335,8 +349,8 @@
                     enhancing data visibility.</span></p>
             <p class="body-regular m-t-1">This phased approach allowed us to iterate and refine based on ongoing user
                 feedback, ensuring that each improvement delivered measurable value.</p>
-            <a data-fslightbox data-type="image" href="opportunity-tree.png"></a>
-            <img class="two-col-grid-item full-width-image m-t-2" src="opportunity-tree.png" alt="Discovery interview">
+            <a data-fslightbox data-type="image" href="opportunity-tree.png">
+                <img class="two-col-grid-item full-width-image m-t-2" src="opportunity-tree.png" alt="Discovery interview" loading="lazy">
             </a>
             <h4 class="heading-2 m-t-2">Success metrics</h4>
             <p class="body-regular m-t-1">
@@ -362,7 +376,6 @@
                             alt="Discovery interview">
                     </a>
                 </div> -->
-            </div>
 
             <div class="m-t-3">
                 <h3 id="user-flow" class="heading-1 m-b-1">User Flow Mapping</h3>
@@ -373,7 +386,7 @@
                     from accessing the dashboard to resolving errors and tracking quotas, while identifying the
                     most critical pain points and opportunities for improvement.</p>
                 <a data-fslightbox data-type="image" href="user-flow.png">
-                    <img class="full-width-image m-t-2" src="user-flow.png" alt="Sketches and voting results">
+                    <img class="full-width-image m-t-2" src="user-flow.png" alt="Sketches and voting results" loading="lazy">
                 </a>
                 <div class="m-t-2">
                     <div class="two-col-grid-item">
@@ -400,7 +413,7 @@
                     key solution. This allowed us to tie our experiments directly to user needs and prioritize
                     improvements.</p>
                 <a data-fslightbox data-type="image" href="assumptions.png">
-                    <img class="full-width-image m-t-2" src="assumptions.png" alt="Sketches and voting results">
+                    <img class="full-width-image m-t-2" src="assumptions.png" alt="Sketches and voting results" loading="lazy">
                 </a>
                 <p class="body-regular m-t-1">By clearly identifying potential risks and establishing specific metrics
                     for each experiment, we ensured that our development efforts were data-driven and focused on
@@ -429,7 +442,7 @@
                 <ul class="three-col-grid m-t-2">
                     <div>
                         <span class="heading-2">
-                            <i data-feather="clock" class="icon-xl"></i><br>
+                            <i data-feather="clock" class="icon-xl" aria-hidden="true"></i><br>
                             Real-Time Quota Updates
                         </span>
                         <p class="body-regular">
@@ -440,7 +453,7 @@
                     </div>
                     <div>
                         <span class="heading-2">
-                            <i data-feather="alert-octagon" class="icon-xl"></i><br>
+                            <i data-feather="alert-octagon" class="icon-xl" aria-hidden="true"></i><br>
                             Enhanced Error Detection
                         </span>
                         <p class="body-regular">
@@ -451,7 +464,7 @@
                     </div>
                     <div>
                         <span class="heading-2">
-                            <i data-feather="home" class="icon-xl"></i><br>
+                            <i data-feather="home" class="icon-xl" aria-hidden="true"></i><br>
                             Customization of Homepage
                         </span>
                         <p class="body-regular">
@@ -464,7 +477,7 @@
 
             </div>
             <a data-fslightbox data-type="image" href="wireframes.png">
-                <img class="full-width-image m-t-2" src="wireframes.png" alt="Discovery interview">
+                <img class="full-width-image m-t-2" src="wireframes.png" alt="Discovery interview" loading="lazy">
             </a>
             <p class="body-regular"><i>Note: I currently do not have access to the original wireframes for translation,
                     but I am working on retrieving them for further updates.</i></p>
@@ -476,7 +489,7 @@
             </p>
             <div class="two-col-grid m-t-3">
                 <a data-fslightbox data-type="image" href="insights.png">
-                    <img class="two-col-grid-item" src="insights.png" alt="Discovery interview">
+                    <img class="two-col-grid-item" src="insights.png" alt="Discovery interview" loading="lazy">
                 </a>
                 <div>
                     <h3 id="user-validation" class="heading-1 m-b-2">User Feedback & Assumption Validation</h3>
@@ -531,8 +544,8 @@
                     quota management, error rates, and operational summaries for each distributor. This allowed RSMs to
                     oversee performance at both a macro and micro level, making them more efficient in identifying
                     bottlenecks or issues.</p>
-                <a data-fslightbox data-type="image" href="mocks-1.png"></a>
-                <img class="full-width-image m-t-1" src="mocks-1.png" alt="Discovery interview">
+                <a data-fslightbox data-type="image" href="mocks-1.png">
+                    <img class="full-width-image m-t-1" src="mocks-1.png" alt="Discovery interview" loading="lazy">
                 </a>
                 <p class="body-regular"><i>Note: I currently do not have access to the original mockups for translation,
                         but I am working on retrieving them for further updates.</i></p>
@@ -542,8 +555,8 @@
                 <p class="body-regular m-t-1">Key features included real-time updates on quotas, automated error
                     detection, and customizable data visualization options, enabling them to handle day-to-day tasks
                     more effectively without being overwhelmed by unnecessary information.</p>
-                <a data-fslightbox data-type="image" href="mocks-2.png"></a>
-                <img class="full-width-image m-t-1" src="mocks-2.png" alt="Discovery interview">
+                <a data-fslightbox data-type="image" href="mocks-2.png">
+                    <img class="full-width-image m-t-1" src="mocks-2.png" alt="Discovery interview" loading="lazy">
                 </a>
                 <p class="body-regular m-t-2">
                     Because we had already gathered significant usability feedback during the wireframing phase and
@@ -609,7 +622,7 @@
             <ul class="three-col-grid m-t-3">
                 <div class="body-regular">
                     <span class="heading-2">
-                        <i data-feather="check-circle" class="icon-xl"></i><br>
+                        <i data-feather="check-circle" class="icon-xl" aria-hidden="true"></i><br>
                         Error Resolution Time
                     </span>
                     <p class="body-regular">
@@ -620,7 +633,7 @@
                 </div>
                 <div class="body-regular">
                     <span class="heading-2">
-                        <i data-feather="trending-up" class="icon-xl"></i><br>
+                        <i data-feather="trending-up" class="icon-xl" aria-hidden="true"></i><br>
                         Increased Engagement
                     </span>
                     <p class="body-regular">
@@ -631,7 +644,7 @@
                 </div>
                 <div class="body-regular">
                     <span class="heading-2">
-                        <i data-feather="check" class="icon-xl"></i><br>
+                        <i data-feather="check" class="icon-xl" aria-hidden="true"></i><br>
                         Improved Data Accuracy
                     </span>
                     <p class="body-regular">
@@ -644,7 +657,7 @@
             <ul class="three-col-grid m-t-1">
                 <div class="body-regular">
                     <span class="heading-2">
-                        <i data-feather="percent" class="icon-xl"></i><br>
+                        <i data-feather="percent" class="icon-xl" aria-hidden="true"></i><br>
                         Automation Index
                     </span>
                     <p class="body-regular">
@@ -655,7 +668,7 @@
                 </div>
                 <div class="body-regular">
                     <span class="heading-2">
-                        <i data-feather="activity" class="icon-xl"></i><br>
+                        <i data-feather="activity" class="icon-xl" aria-hidden="true"></i><br>
                         Time Spent on the Dashboard
                     </span>
                     <p class="body-regular">
@@ -665,7 +678,7 @@
                 </div>
                 <div class="body-regular">
                     <span class="heading-2">
-                        <i data-feather="star" class="icon-xl"></i><br>
+                        <i data-feather="star" class="icon-xl" aria-hidden="true"></i><br>
                         User Satisfaction
                     </span>
                     <p class="body-regular">
@@ -689,32 +702,7 @@
 
     </main>
 
-    <footer id="contact">
-        <!-- <div class="contact-form">
-            <h3>Send A Message</h3>
-            <form action="#">
-                <input type="text" name="name" placeholder="Enter your name">
-                <input type="email" name="email" placeholder="Enter your email">
-                <textarea name="message" placeholder="Type your message..."></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </div> -->
-        <img class="footer-image" src="../../img/image-3.png" alt="Footer Image">
-        <div class="right-container">
-            <div class="section-title m-b-1">
-                <h2 class="heading-1">Contact</h2>
-            </div>
-            <a class="contact-info link-button" href="mailto:gabrielfquadrado@gmail.com">gabrielfquadrado@gmail.com</a>
-            <p class="contact-info">(587) 839-0631</p>
-            <p class="contact-info">Calgary, AB, Canada</p>
-            <a class="contact-info link-button" href="https://www.linkedin.com/in/gabrielquadrado/" target="_blank">
-                <i data-feather="linkedin" class="icon-m"></i>
-                Linkedin
-            </a>
-            <p class="m-t-2">© 2024 Designed by Gabriel Quadrado</p>
-            </a>
-        </div>
-    </footer>
+    <footer-component></footer-component>
 </body>
 
 </html>

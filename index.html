@@ -13,7 +13,21 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Q.</title>
+    <title>Gabriel Q. — Product Designer & Developer</title>
+    <meta name="description" content="Portfolio of Gabriel Quadrado, a product designer and developer with 7+ years of experience crafting digital products.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gabriel Q. — Product Designer & Developer">
+    <meta property="og:description" content="Portfolio of Gabriel Quadrado, a product designer and developer with 7+ years of experience crafting digital products.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/image-hero.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gabriel Q. — Product Designer & Developer">
+    <meta name="twitter:description" content="Portfolio of Gabriel Quadrado, a product designer and developer with 7+ years of experience.">
+    <meta name="twitter:image" content="img/image-hero.png">
+
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -23,6 +37,14 @@
     <meta name="msapplication-TileColor" content="#fefcf7">
     <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#fefcf7">
+
+    <!-- Prevent dark mode flash -->
+    <script>
+      if (localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="styles/styles.css">
@@ -39,6 +61,11 @@
     <header>
         <nav>
             <a href="#" class="logo heading-1">Gabriel Q.</a>
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </button>
             <ul>
                 <li>
                     <a class="nav-item active" href="#">Home</a>
@@ -55,6 +82,12 @@
                 <li>
                     <a class="primary-button" href="#contact">Get In Touch</a>
                 </li>
+                <li>
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <i data-feather="moon" class="icon-s theme-icon-dark" aria-hidden="true"></i>
+                        <i data-feather="sun" class="icon-s theme-icon-light" aria-hidden="true"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -69,7 +102,7 @@
                 with <span class="body-bold">+7 years of experience.</span>
             </p>
             <a href="#projects" class="link-button">
-                <i data-feather="chevrons-down" class="icon-m"></i>
+                <i data-feather="chevrons-down" class="icon-m" aria-hidden="true"></i>
                 My Projects
 
             </a>
@@ -81,6 +114,14 @@
             <h2 class="heading-1">Career</h2>
         </div>
         <ul class="timeline">
+            <li class="job-item">
+                <span class="body-regular">Dec 2024 - Present</span>
+                <div class="circle"></div>
+                <div class="info">
+                    <h3 class="body-bold">Product Designer</h3>
+                    <span class="body-medium">FlipGive / RaiseRight, Canada</span>
+                </div>
+            </li>
             <li class="job-item">
                 <span class="body-regular">Mar 2022 - Aug 2024</span>
                 <div class="circle"></div>
@@ -116,30 +157,30 @@
         </ul>
         <a href="https://www.linkedin.com/in/gabrielquadrado/details/experience/" target="_blank"
             class="link-button m-t-3">
-            <i data-feather="external-link" class="icon-m"></i>
+            <i data-feather="external-link" class="icon-m" aria-hidden="true"></i>
             More information
         </a>
         <a href="assets/GabrielQuadrado_CV_EN_2024_v3.pdf" class="link-button m-t-1">
-            <i data-feather="download" class="icon-m"></i>
+            <i data-feather="download" class="icon-m" aria-hidden="true"></i>
             Download resume
         </a>
     </section>
     <section id="education" class="education">
-        <div class="education-image"><img class="" src="img/image-7.png" alt="Intro Image"></div>
+        <div class="education-image"><img class="" src="img/image-7.png" alt="Intro Image" loading="lazy"></div>
         <div class="right-container">
             <div class="section-title">
                 <h2 class="heading-1">Education</h2>
             </div>
             <ul class="education-content m-b-2">
                 <li class="education-item">
-                    <span class="body-normal left">Brazil</span>
+                    <span class="body-regular left">Brazil</span>
                     <h3 class="body-bold">Graphic and Product Design Specialization</h3>
-                    <span class="body-normal right">2018-2020</span>
+                    <span class="body-regular right">2018-2020</span>
                 </li>
                 <li class="education-item">
-                    <span class="body-normal left">Brazil</span>
+                    <span class="body-regular left">Brazil</span>
                     <h3 class="body-bold">Software Development Degree</h3>
-                    <span class="body-normal right">2015-2017</span>
+                    <span class="body-regular right">2015-2017</span>
                 </li>
             </ul>
             <div class="section-title">
@@ -147,29 +188,29 @@
             </div>
             <ul class="education-content">
                 <li class="education-item">
-                    <span class="body-normal left">IxDF</span>
+                    <span class="body-regular left">IxDF</span>
                     <h3 class="body-bold">HCI: The Foundations of UX Design</h3>
-                    <span class="body-normal right">2024</span>
+                    <span class="body-regular right">2024</span>
                 </li>
                 <li class="education-item">
-                    <span class="body-normal left">FIAP</span>
+                    <span class="body-regular left">FIAP</span>
                     <h3 class="body-bold">Design Thinking</h3>
-                    <span class="body-normal right">2021</span>
+                    <span class="body-regular right">2021</span>
                 </li>
                 <li class="education-item">
-                    <span class="body-normal left">FIAP</span>
+                    <span class="body-regular left">FIAP</span>
                     <h3 class="body-bold">User Experience</h3>
-                    <span class="body-normal right">2021</span>
+                    <span class="body-regular right">2021</span>
                 </li>
                 <li class="education-item">
-                    <span class="body-normal left">Conquer</span>
+                    <span class="body-regular left">Conquer</span>
                     <h3 class="body-bold">Emotional Intelligence</h3>
-                    <span class="body-normal right">2020</span>
+                    <span class="body-regular right">2020</span>
                 </li>
             </ul>
             <a href="https://www.linkedin.com/in/gabrielquadrado/details/certifications/" target="_blank"
                 class="link-button m-t-2">
-                <i data-feather="external-link" class="icon-m"></i>
+                <i data-feather="external-link" class="icon-m" aria-hidden="true"></i>
                 Credentials
             </a>
         </div>
@@ -181,7 +222,7 @@
         <ul class="project-featured-grid m-b-3">
             <a href="projects/taboom/taboom.html" class="project-item">
                 <div class="featured-image taboom">
-                    <img src="projects/taboom/Taboom-2.png" alt="Taboom">
+                    <img src="projects/taboom/Taboom-2.png" alt="Taboom" loading="lazy">
                 </div>
                 <div class="info">
                     <div class="header">
@@ -201,7 +242,7 @@
             </a>
             <a href="projects/arquivei/arquivei.html" class="project-item">
                 <div class="featured-image arquivei">
-                    <img src="projects/arquivei/Arquivei-1.png" alt="Arquivei">
+                    <img src="projects/arquivei/Arquivei-1.png" alt="Arquivei" loading="lazy">
                 </div>
                 <div class="info">
                     <div class="header">
@@ -224,35 +265,35 @@
         </div>
         <ul class="project-grid">
             <a href="projects/medicalbox/case.pdf" target="_blank" class="project-item">
-                <img src="projects/medicalbox/Medical-2.png" alt="medicalBox">
+                <img src="projects/medicalbox/Medical-2.png" alt="medicalBox" loading="lazy">
                 <div class="info">
                     <h4 class="heading-2">medicalBox</h4>
                     <span class="label-3 chip">Web + Mobile App Design</span>
                 </div>
             </a>
             <a href="https://www.behance.net/gallery/129336261/Opinei" target="_blank" class="project-item">
-                <img src="projects/opinei/Opinei.png" alt="Opinei">
+                <img src="projects/opinei/Opinei.png" alt="Opinei" loading="lazy">
                 <div class="info">
                     <h4 class="heading-2">Opinei</h4>
                     <span class="label-3 chip">Mobile App Design</span>
                 </div>
             </a>
             <a href="https://www.behance.net/gallery/102017273/CooperCitrus" target="_blank" class="project-item">
-                <img src="projects/coopercitrus/Coopercitrus.png" alt="Coopercitrus">
+                <img src="projects/coopercitrus/Coopercitrus.png" alt="Coopercitrus" loading="lazy">
                 <div class="info">
                     <h4 class="heading-2">Coopercitrus</h4>
                     <span class="label-3 chip">Web + Mobile App Design</span>
                 </div>
             </a>
             <a href="https://www.behance.net/gallery/102020179/Graphic-Design" target="_blank" class="project-item">
-                <img src="img/Graphic.png" alt="Graphic Design">
+                <img src="img/Graphic.png" alt="Graphic Design" loading="lazy">
                 <div class="info">
                     <h4 class="heading-2">Graphic Design</h4>
                     <span class="label-3 chip">General</span>
                 </div>
             </a>
             <a href="https://www.behance.net/gabrielquadrado" target="_blank" class="link-button center m-t-3">
-                <i data-feather="external-link" class="icon-m"></i>
+                <i data-feather="external-link" class="icon-m" aria-hidden="true"></i>
                 Click to check all projects
             </a>
         </ul>
@@ -267,7 +308,7 @@
                     <button type="submit">Submit</button>
                 </form>
             </div> -->
-        <img class="footer-image" src="img/image-3.png" alt="Footer Image">
+        <img class="footer-image" src="img/image-3.png" alt="Footer Image" loading="lazy">
         <div class="right-container">
             <div class="section-title m-b-1">
                 <h2 class="heading-1">Contact</h2>
@@ -276,11 +317,10 @@
             <p class="contact-info">(587) 839-0631</p>
             <p class="contact-info">Calgary, AB, Canada</p>
             <a class="contact-info link-button" href="https://www.linkedin.com/in/gabrielquadrado/" target="_blank">
-                <i data-feather="linkedin" class="icon-m"></i>
+                <i data-feather="linkedin" class="icon-m" aria-hidden="true"></i>
                 Linkedin
             </a>
             <p class="m-t-2">© 2024 Designed by Gabriel Quadrado</p>
-            </a>
         </div>
     </footer>
 </body>

@@ -13,7 +13,21 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taboom | Gabriel Q.</title>
+    <title>Taboom — Case Study | Gabriel Q.</title>
+    <meta name="description" content="How a real-time trivia feature drove a 390% increase in monetization and grew viewership from 10 to 400 participants on Taboom.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Taboom — Case Study | Gabriel Q.">
+    <meta property="og:description" content="Real-time trivia feature that drove 390% increase in monetization and 2,900% increase in viewer participation.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="Taboom-1.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Taboom — Case Study | Gabriel Q.">
+    <meta name="twitter:description" content="Real-time trivia feature that drove 390% increase in monetization on Taboom.">
+    <meta name="twitter:image" content="Taboom-1.png">
+
     <link rel="apple-touch-icon" sizes="180x180" href="../../../../img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon/favicon-16x16.png">
@@ -23,6 +37,14 @@
     <meta name="msapplication-TileColor" content="#fefcf7">
     <meta name="msapplication-config" content="/../../img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#fefcf7">
+
+    <!-- Prevent dark mode flash -->
+    <script>
+      if (localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="../../styles/styles.css">
@@ -34,23 +56,15 @@
     <script src="../../scripts/feather.js"></script>
     <script src="../../scripts/fslightbox.js" defer></script>
 
+    <!-- Component loader -->
+    <script src="../../scripts/components.js" data-base="../../" defer></script>
+
     <!-- Main script -->
     <script src="../../scripts/main.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="../../index.html" class="logo heading-1">Gabriel Q.</a>
-            <ul>
-                <li><a class="nav-item" href="../../index.html">Home</a></li>
-                <li><a class="nav-item" href="../../index.html#career">Career</a></li>
-                <li><a class="nav-item" href="../../index.html#education">Education</a></li>
-                <li><a class="nav-item" href="../../index.html#projects">Projects</a></li>
-                <li><a class="primary-button" href="../../index.html#contact">Get In Touch</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header-component></header-component>
 
     <main id="taboom">
         <section id="project-hero">
@@ -130,7 +144,7 @@
             </div>
         </section>
 
-        <img class="full-width-image" src="full-width.png" height="400">
+        <img class="full-width-image" src="full-width.png" height="400" loading="lazy">
 
         <section id="process" class="four-col-grid">
             <div class="four-col-grid-item">
@@ -180,7 +194,7 @@
                 to migrate their audience from mainstream platforms and what kept their viewers engaged.</p>
             <div class="two-col-grid m-t-3">
                 <a data-fslightbox data-type="image" href="taboom-quotes.png">
-                    <img class="two-col-grid-item" src="taboom-quotes.png" alt="Quotes image">
+                    <img class="two-col-grid-item" src="taboom-quotes.png" alt="Quotes image" loading="lazy">
                 </a>
                 <div class="two-col-grid-item">
                     <h3 id="creator-interviews" class="heading-1 m-b-2">Creator Interviews</h3>
@@ -230,7 +244,7 @@
                     </ul>
                 </div>
                 <a data-fslightbox data-type="image" href="discovery-interview.png">
-                    <img class="two-col-grid-item" src="discovery-interview.png" alt="Discovery interview">
+                    <img class="two-col-grid-item" src="discovery-interview.png" alt="Discovery interview" loading="lazy">
                 </a>
             </div>
             <p class="body-regular m-t-3">The combination of this quantitative data, user interviews, and surveys
@@ -242,7 +256,7 @@
                 <p class="body-regular m-t-1">To synthesize our research, we facilitated a How Might We (HMW) session
                     with stakeholders, developers, and designers.</p>
                 <a data-fslightbox data-type="image" href="hmw-board.png">
-                    <img class="two-col-grid-item full-width-image m-t-2" src="hmw-board.png" alt="Discovery interview">
+                    <img class="two-col-grid-item full-width-image m-t-2" src="hmw-board.png" alt="Discovery interview" loading="lazy">
                 </a>
                 <p class="body-regular m-t-3">Here are the core How Might We questions that emerged from our
                     brainstorming session:</p>
@@ -273,12 +287,11 @@
             </ul>
             <div class="two-col-grid">
                 <a data-fslightbox data-type="image" href="persona-1.png">
-                    <img class="two-col-grid-item full-width-image m-t-2" src="persona-1.png" alt="Discovery interview">
+                    <img class="two-col-grid-item full-width-image m-t-2" src="persona-1.png" alt="Discovery interview" loading="lazy">
                 </a>
                 <a data-fslightbox data-type="image" href="persona-2.png">
-                    <img class="two-col-grid-item full-width-image m-t-2" src="persona-2.png" alt="Discovery interview">
+                    <img class="two-col-grid-item full-width-image m-t-2" src="persona-2.png" alt="Discovery interview" loading="lazy">
                 </a>
-            </div>
             </div>
         </section>
 
@@ -295,7 +308,7 @@
                 <h3 id="brainwriting" class="heading-1 m-b-2">Workshop 1: Brainwriting Session</h3>
                 <div class="two-col-grid">
                     <a data-fslightbox data-type="image" href="brain-writing.png">
-                        <img class="full-width-image" src="brain-writing.png" alt="Brainwriting board screenshot">
+                        <img class="full-width-image" src="brain-writing.png" alt="Brainwriting board screenshot" loading="lazy">
                     </a>
                     <div class="two-col-grid-item">
                         <p class="body-regular m-t-1">We began with a brainwriting session to generate a diverse set of
@@ -357,7 +370,7 @@
                             monetization potential.</p>
                     </div>
                     <a data-fslightbox data-type="image" href="crazy8.png">
-                        <img class="two-col-grid-item" src="crazy8.png" alt="Sketches and voting results">
+                        <img class="two-col-grid-item" src="crazy8.png" alt="Sketches and voting results" loading="lazy">
                     </a>
                 </div>
             </div>
@@ -367,7 +380,7 @@
                 <h3 id="assumption" class="heading-1 m-b-2">Assumption Mapping</h3>
                 <div class="two-col-grid">
                     <a data-fslightbox data-type="image" href="journey-assumptions.png">
-                        <img class="two-col-grid-item" src="journey-assumptions.png" alt="Sketches and voting results">
+                        <img class="two-col-grid-item" src="journey-assumptions.png" alt="Sketches and voting results" loading="lazy">
                     </a>
                     <div class="body-regular m-t-1">
                         <p class="body-regular">
@@ -383,19 +396,19 @@
                         </p>
                         <div class="m-t-2 m-b-2">
                             <div class="m-t-2">
-                                <i data-feather="zap" class="icon-xl"></i><br>
+                                <i data-feather="zap" class="icon-xl" aria-hidden="true"></i><br>
                                 <span class="body-bold">Assumption 1</span><br>
                                 <p class="body-regular">Creators would prefer a trivia feature if it was easy and quick
                                     to set up during or before live streams.</p>
                             </div>
                             <div class="m-t-2">
-                                <i data-feather="gift" class="icon-xl"></i><br>
+                                <i data-feather="gift" class="icon-xl" aria-hidden="true"></i><br>
                                 <span class="body-bold">Assumption 2</span><br>
                                 <p class="body-regular">Audiences would be more engaged if they could win prizes by
                                     participating in real-time trivia games.</p>
                             </div>
                             <div class="m-t-2">
-                                <i data-feather="trending-up" class="icon-xl"></i><br>
+                                <i data-feather="trending-up" class="icon-xl" aria-hidden="true"></i><br>
                                 <span class="body-bold">Assumption 3</span><br>
                                 <p class="body-regular">A real-time leaderboard would enhance audience engagement, but
                                     only if it didn’t take up too much screen space or disrupt the stream.</p>
@@ -417,7 +430,6 @@
             <p class="body-regular m-b-1">I collaborated with other designers who reviewed the wireframes during <span
                     class="body-bold"> design critique sessions</span>, offering valuable input to refine the layout and
                 user flow. Developers were also involved to ensure that each concept was technically feasible.</p>
-            </div>
             <div class="m-t-3">
                 <h3 id="wireframes" class="heading-1 m-b-2">Wireframing (collaborative)</h3>
                 <p class="body-regular m-b-1">
@@ -432,7 +444,7 @@
                 </div>
             </div>
             <a data-fslightbox data-type="image" href="wireframes.png">
-                <img class="full-width-image m-t-2" src="wireframes.png" alt="Discovery interview">
+                <img class="full-width-image m-t-2" src="wireframes.png" alt="Discovery interview" loading="lazy">
             </a>
             <p class="body-regular"><i>Note: I currently do not have access to the original wireframes for translation,
                     but I am working on retrieving them for further updates.</i></p>
@@ -447,7 +459,7 @@
             </p>
             <div class="two-col-grid m-t-3">
                 <a data-fslightbox data-type="image" href="interview.png">
-                    <img class="two-col-grid-item m-t-2" src="interview.png" alt="Discovery interview">
+                    <img class="two-col-grid-item m-t-2" src="interview.png" alt="Discovery interview" loading="lazy">
                 </a>
                 <div>
                     <h3 id="user-validation" class="heading-1 m-b-2">User Validation (Lo-Fi Wireframes)</h3>
@@ -486,7 +498,7 @@
                 </div>
             </div>
             <a data-fslightbox data-type="image" href="interview-quotes.png">
-                <img class="full-width-image m-t-2" src="interview-quotes.png" alt="Discovery interview">
+                <img class="full-width-image m-t-2" src="interview-quotes.png" alt="Discovery interview" loading="lazy">
             </a>
             <p class="body-regular m-b-1">
                 Based on this feedback, we decided to:
@@ -533,7 +545,7 @@
                     design critique sessions, where each team provided valuable input.
                 </p>
                 <a data-fslightbox data-type="image" href="mockups.png">
-                    <img class="full-width-image m-t-2" src="mockups.png" alt="Discovery interview">
+                    <img class="full-width-image m-t-2" src="mockups.png" alt="Discovery interview" loading="lazy">
                 </a>
                 <p class="body-regular"><i>Note: I currently do not have access to the original prototype for
                         translation, but I am working on retrieving them for further updates.</i></p>
@@ -545,8 +557,8 @@
                     I then conducted usability testing with the updated high-fidelity prototype, again involving the
                     same 8 creators and 15 audience members to simulate the full quiz experience. Here's what we found:
                 </p>
-                <a data-fslightbox data-type="image" href="usability.png"></a>
-                <img class="full-width-image m-t-2" src="usability.png" alt="Discovery interview">
+                <a data-fslightbox data-type="image" href="usability.png">
+                    <img class="full-width-image m-t-2" src="usability.png" alt="Discovery interview" loading="lazy">
                 </a>
                 <div class="three-col-grid m-t-3">
                     <div class="body-regular">
@@ -667,32 +679,7 @@
 
     </main>
 
-    <footer id="contact">
-        <!-- <div class="contact-form">
-            <h3>Send A Message</h3>
-            <form action="#">
-                <input type="text" name="name" placeholder="Enter your name">
-                <input type="email" name="email" placeholder="Enter your email">
-                <textarea name="message" placeholder="Type your message..."></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </div> -->
-        <img class="footer-image" src="../../img/image-3.png" alt="Footer Image">
-        <div class="right-container">
-            <div class="section-title m-b-1">
-                <h2 class="heading-1">Contact</h2>
-            </div>
-            <a class="contact-info link-button" href="mailto:gabrielfquadrado@gmail.com">gabrielfquadrado@gmail.com</a>
-            <p class="contact-info">(587) 839-0631</p>
-            <p class="contact-info">Calgary, AB, Canada</p>
-            <a class="contact-info link-button" href="https://www.linkedin.com/in/gabrielquadrado/" target="_blank">
-                <i data-feather="linkedin" class="icon-m"></i>
-                Linkedin
-            </a>
-            <p class="m-t-2">© 2024 Designed by Gabriel Quadrado</p>
-            </a>
-        </div>
-    </footer>
+    <footer-component></footer-component>
 </body>
 
 </html>
