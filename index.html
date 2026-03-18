@@ -14,11 +14,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel Q. — Product Designer & Developer</title>
-    <meta name="description" content="Portfolio of Gabriel Quadrado, a product designer and developer with 7+ years of experience crafting digital products.">
+    <meta name="description" content="Portfolio of Gabriel Quadrado, a product designer and developer with 8+ years of experience crafting digital products.">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Gabriel Q. — Product Designer & Developer">
-    <meta property="og:description" content="Portfolio of Gabriel Quadrado, a product designer and developer with 7+ years of experience crafting digital products.">
+    <meta property="og:description" content="Portfolio of Gabriel Quadrado, a product designer and developer with 8+ years of experience crafting digital products.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="img/image-hero.png">
 
@@ -55,42 +55,12 @@
 
     <!-- Main script -->
     <script src="scripts/main.js" defer></script>
+    <!-- Component loader -->
+    <script src="scripts/components.js" data-base="" defer></script>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="#" class="logo heading-1">Gabriel Q.</a>
-            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-                <span class="menu-bar"></span>
-                <span class="menu-bar"></span>
-                <span class="menu-bar"></span>
-            </button>
-            <ul>
-                <li>
-                    <a class="nav-item active" href="#">Home</a>
-                </li>
-                <li>
-                    <a class="nav-item" href="#career">Career</a>
-                </li>
-                <li>
-                    <a class="nav-item" href="#education">Education</a>
-                </li>
-                <li>
-                    <a class="nav-item" href="#projects">Projects</a>
-                </li>
-                <li>
-                    <a class="primary-button" href="#contact">Get In Touch</a>
-                </li>
-                <li>
-                    <button class="theme-toggle" aria-label="Toggle dark mode">
-                        <i data-feather="moon" class="icon-s theme-icon-dark" aria-hidden="true"></i>
-                        <i data-feather="sun" class="icon-s theme-icon-light" aria-hidden="true"></i>
-                    </button>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <header-component></header-component>
     <section id="intro" class="intro">
         <div class="text">
             <h1 class="m-b-2">
@@ -99,7 +69,7 @@
             <p class="body-regular m-b-1p5">
                 I'm Gabriel, a product designer and developer
                 <br>
-                with <span class="body-bold">+7 years of experience.</span>
+                with <span class="body-bold">8 years of experience.</span>
             </p>
             <a href="#projects" class="link-button">
                 <i data-feather="chevrons-down" class="icon-m" aria-hidden="true"></i>
@@ -298,32 +268,7 @@
             </a>
         </ul>
     </section>
-    <footer id="contact">
-        <!-- <div class="contact-form">
-                <h3>Send A Message</h3>
-                <form action="#">
-                    <input type="text" name="name" placeholder="Enter your name">
-                    <input type="email" name="email" placeholder="Enter your email">
-                    <textarea name="message" placeholder="Type your message..."></textarea>
-                    <button type="submit">Submit</button>
-                </form>
-            </div> -->
-        <img class="footer-image" src="img/image-3.png" alt="Footer Image" loading="lazy">
-        <div class="right-container">
-            <div class="section-title m-b-1">
-                <h2 class="heading-1">Contact</h2>
-            </div>
-            <a class="contact-info link-button" href="mailto:gabrielfquadrado@gmail.com">gabrielfquadrado@gmail.com</a>
-            <p class="contact-info">(587) 839-0631</p>
-            <p class="contact-info">Calgary, AB, Canada</p>
-            <a class="contact-info link-button" href="https://www.linkedin.com/in/gabrielquadrado/" target="_blank">
-                <i data-feather="linkedin" class="icon-m" aria-hidden="true"></i>
-                Linkedin
-            </a>
-            <p class="m-t-2">&copy; <span id="footer-year"></span> Designed by Gabriel Quadrado</p>
-            <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
-        </div>
-    </footer>
+    <footer-component></footer-component>
 </body>
 
 </html>

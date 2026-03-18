@@ -46,15 +46,17 @@
   --blue: #5691D7;
   --green: #3C786C;
   --purple: #7328EE;
+  --yellow: #F5C842;
 }
 
 html.dark {
   --black: #EEEEEE;
-  --cream: #1A1A2E;
+  --cream: #141414;
   --red: #FF6B7A;
   --blue: #7AB0E8;
   --green: #5AA393;
   --purple: #9558FF;
+  --yellow: #E8B930;
 }
 
 html {
@@ -592,6 +594,10 @@ footer#contact .contact-info {
   color: var(--black);
   font-variant-numeric: lining-nums;
   padding: .25rem 0;
+}
+
+footer#contact .section-title {
+  border-color: var(--yellow);
 }
 
 /* End footer section */
