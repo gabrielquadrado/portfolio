@@ -320,7 +320,8 @@
                 <i data-feather="linkedin" class="icon-m" aria-hidden="true"></i>
                 Linkedin
             </a>
-            <p class="m-t-2">© 2024 Designed by Gabriel Quadrado</p>
+            <p class="m-t-2">&copy; <span id="footer-year"></span> Designed by Gabriel Quadrado</p>
+            <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
         </div>
     </footer>
 </body>
