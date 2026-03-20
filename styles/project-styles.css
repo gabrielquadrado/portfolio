@@ -3,18 +3,18 @@ body * {
 }
 
 /* Full-width featured card on homepage */
-section#projects .project-featured-grid .project-item--full {
+section#projects .project-featured-grid .project-item.project-item--full {
     flex: 100%;
     width: 100%;
     max-width: 100%;
 }
 
-section#projects .project-featured-grid .project-item--full .featured-image {
+section#projects .project-featured-grid .project-item.project-item--full .featured-image {
     max-width: 45%;
     min-width: 45%;
 }
 
-section#projects .project-featured-grid .project-item--full .featured-image.raiseright {
+section#projects .project-featured-grid .project-item.project-item--full .featured-image.raiseright {
     background-color: #3C786C;
 }
 
