@@ -2,6 +2,22 @@ body * {
     scroll-margin-top: 8rem;
 }
 
+/* Full-width featured card on homepage */
+section#projects .project-featured-grid .project-item--full {
+    flex: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+section#projects .project-featured-grid .project-item--full .featured-image {
+    max-width: 45%;
+    min-width: 45%;
+}
+
+section#projects .project-featured-grid .project-item--full .featured-image.raiseright {
+    background-color: #3C786C;
+}
+
 .right-container {
     flex: 1;
 }
@@ -20,6 +36,10 @@ main#taboom #project-hero .section-title {
 
 main#arquivei #project-hero .section-title {
     border-color: var(--blue);
+}
+
+main#raiseright #project-hero .section-title {
+    border-color: var(--green);
 }
 
 
@@ -71,7 +91,9 @@ section#discover,
 section#ideate,
 section#design,
 section#deliver,
-section#conclusion {
+section#conclusion,
+section#research,
+section#iterate {
     padding: 3rem 20vw;
     background-color: var(--cream);
 }
@@ -94,6 +116,15 @@ main#arquivei section#conclusion .section-title {
     border-color: var(--blue);
 }
 
+main#raiseright section#discover .section-title,
+main#raiseright section#design .section-title,
+main#raiseright section#research .section-title,
+main#raiseright section#iterate .section-title,
+main#raiseright section#conclusion .section-title {
+    margin: 0 auto 3rem auto;
+    border-color: var(--green);
+}
+
 /* End phase section global styles */
 
 
@@ -111,7 +142,8 @@ main#arquivei section#conclusion .section-title {
         padding: 6rem 15vw 0 15vw;
         gap: 3rem;
     }
-    section#discover, section#ideate, section#design, section#deliver, section#conclusion{
+    section#discover, section#ideate, section#design, section#deliver, section#conclusion,
+    section#research, section#iterate {
         padding: 3rem 15vw;
     }
 }
@@ -145,7 +177,8 @@ main#arquivei section#conclusion .section-title {
         gap: 3rem;
     }
 
-    section#discover, section#ideate, section#design, section#deliver, section#conclusion {
+    section#discover, section#ideate, section#design, section#deliver, section#conclusion,
+    section#research, section#iterate {
         padding: 3rem 8vw;
     }
 }
@@ -164,7 +197,8 @@ main#arquivei section#conclusion .section-title {
         padding: 3rem 8vw;
     }
 
-    section#discover, section#ideate, section#design, section#deliver, section#conclusion {
+    section#discover, section#ideate, section#design, section#deliver, section#conclusion,
+    section#research, section#iterate {
         padding: 2rem 8vw;
     }
 }

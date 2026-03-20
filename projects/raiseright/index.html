@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RaiseRight — Case Study | Gabriel Q.</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon/favicon-32x32.png">
+    <link rel="shortcut icon" href="../../img/favicon/favicon.ico">
+
+    <!-- Prevent dark mode flash -->
+    <script>
+      if (localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+
+    <link rel="stylesheet" href="../../styles/styles.css">
+
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .gate-wrapper {
+            max-width: 28rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .gate-header {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .gate-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .gate-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--black);
+            background-color: var(--cream);
+            color: var(--black);
+            font-family: 'Syne', sans-serif;
+            font-size: 1.125rem;
+            outline: none;
+        }
+
+        .gate-input:focus {
+            box-shadow: 4px 4px 0px 0px var(--black);
+        }
+
+        .gate-input::placeholder {
+            color: var(--black);
+            opacity: 0.4;
+        }
+
+        .gate-error {
+            font-size: 1rem;
+            color: var(--red);
+            display: none;
+        }
+
+        .gate-error.visible {
+            display: block;
+        }
+
+        .back-link {
+            font-size: 1rem;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gate-wrapper">
+        <a href="../../index.html" class="back-link link-button">
+            ← Back to portfolio
+        </a>
+        <div class="gate-header">
+            <div class="section-title" style="border-color: var(--green);">
+                <h1 class="display-3">RaiseRight</h1>
+            </div>
+            <p class="body-regular" style="margin-top: 1rem;">This case study is password protected. Enter the password to continue.</p>
+        </div>
+        <form class="gate-form" id="gateForm">
+            <input
+                class="gate-input"
+                type="password"
+                id="passwordInput"
+                placeholder="Enter password"
+                autocomplete="current-password"
+                autofocus
+            />
+            <span class="gate-error" id="gateError">Incorrect password. Try again.</span>
+            <button type="submit" class="primary-button" style="width: fit-content; cursor: pointer;">
+                Continue
+            </button>
+        </form>
+    </div>
+
+    <script>
+        // SHA-256 of "GiftFlow!9"
+        var HASH = "147c778fb65eb37e48b9a6e0f5427c9b411ba7803f79a7f4904184417f3e04f4";
+        var SESSION_KEY = "rr_access";
+
+        // If already authenticated, go straight in
+        if (sessionStorage.getItem(SESSION_KEY) === "1") {
+            window.location.replace("raiseright.html");
+        }
+
+        async function sha256(str) {
+            var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+            return Array.from(new Uint8Array(buf)).map(function(b) {
+                return b.toString(16).padStart(2, "0");
+            }).join("");
+        }
+
+        document.getElementById("gateForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            var input = document.getElementById("passwordInput").value;
+            var hash = await sha256(input);
+            if (hash === HASH) {
+                sessionStorage.setItem(SESSION_KEY, "1");
+                window.location.replace("raiseright.html");
+            } else {
+                var error = document.getElementById("gateError");
+                error.classList.add("visible");
+                document.getElementById("passwordInput").value = "";
+                document.getElementById("passwordInput").focus();
+            }
+        });
+    </script>
+</body>
+
+</html>
