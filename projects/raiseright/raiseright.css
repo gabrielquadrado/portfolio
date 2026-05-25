@@ -283,8 +283,8 @@ main#raiseright .callout p + p {
 
 main#raiseright .variant-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 
