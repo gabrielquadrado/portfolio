@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RaiseRight Guided Onboarding — Case Study | Gabriel Q.</title>
-    <meta name="description" content="How a CBT-informed guided onboarding flow improved first-order conversion for RaiseRight's fundraising platform.">
+    <meta name="description" content="A CBT-informed onboarding redesign for RaiseRight, validated across two rounds of moderated research with zero confidence drops in Round 2.">
     <meta name="robots" content="noindex, nofollow">
 
     <link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon/favicon-32x32.png">
@@ -25,8 +25,7 @@
 
     <!-- Prevent dark mode flash -->
     <script>
-      if (localStorage.getItem("theme") === "dark" ||
-        false) {
+      if (localStorage.getItem("theme") === "dark" || false) {
         document.documentElement.classList.add("dark");
       }
     </script>
@@ -40,9 +39,8 @@
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="../../styles/styles.css">
-
-    <!-- Projects Styles -->
     <link rel="stylesheet" href="../../styles/project-styles.css">
+    <link rel="stylesheet" href="raiseright.css">
 
     <!-- Third party scripts -->
     <script src="../../scripts/feather.js"></script>
@@ -53,6 +51,9 @@
 
     <!-- Main script -->
     <script src="../../scripts/main.js" defer></script>
+
+    <!-- Page-specific script -->
+    <script src="raiseright.js" defer></script>
 </head>
 
 <body>
@@ -60,8 +61,11 @@
 
     <main id="raiseright">
 
+        <!-- =================================================================
+             HERO
+             ================================================================= -->
         <section id="project-hero">
-            <img class="hero-image" src="https://placehold.co/1400x600/3C786C/FFFFFF?text=raiseright-hero.png" alt="RaiseRight Guided Onboarding — Hero">
+            <!-- Hero image: when ready, place a full-width <img> or <div class="hero-image"> here, above the container -->
             <div class="container">
                 <div class="section-title">
                     <h1 class="display-2">RaiseRight</h1>
@@ -70,385 +74,741 @@
                     <div class="two-col-grid-item">
                         <h2 class="heading-1 m-b-1">Overview</h2>
                         <p class="body-regular overview">
-                            <span class="body-bold">Role</span>Senior Product Designer
+                            <span class="body-bold">Role</span>UX/Product Designer (lead)
                         </p>
                         <p class="body-regular overview">
-                            <span class="body-bold">Design Team</span>Myself + Head of Product
+                            <span class="body-bold">Design Team</span>Solo design, partnered with product and research
                         </p>
                         <p class="body-regular overview">
-                            <span class="body-bold">Squad</span>Myself + PM + Head of Product + Engineering Lead
+                            <span class="body-bold">Squad</span>Joe (leadership sponsor), Reema (product/research partner), Michelle Leung (marketing), Billy Lawler (incentive program), Chaz (early prototype work)
                         </p>
                         <p class="body-regular overview">
-                            <span class="body-bold">Duration</span>Q4 2025 – Q1 2026
+                            <span class="body-bold">Duration</span>~10 weeks, two research rounds
                         </p>
                         <p class="body-regular overview">
-                            <span class="body-bold">Tools</span>Figma, UserInterviews.com, Dovetail
+                            <span class="body-bold">Tools</span>Figma (with variables), HTML prototypes for moderated testing, userinterviews.com
                         </p>
                     </div>
                     <div class="grid-item">
                         <h2 class="heading-1 m-b-1">Summary</h2>
-                        <p class="body-regular">RaiseRight is a fundraising platform where families earn money for schools and organizations by purchasing gift cards from 750+ brands. First-order conversion had been declining, and the existing onboarding was feature-led and educational — it explained the product but didn't motivate behavior change. I designed and led research on a new <span class="body-bold">CBT-informed onboarding flow</span> that treated the core challenge not as "how do I use this app" but as "am I willing to change how I pay for everyday purchases." The new 9-step guided experience uses goal-setting, cognitive restructuring, and self-efficacy building to turn sign-ups into committed users. Moderated research with 7 participants validated the framework — <span class="body-bold">5 of 7 showed positive confidence shifts</span> — while surfacing critical design fixes that directly shaped the next iteration.</p>
+                        <p class="body-regular">A CBT-informed onboarding redesign for RaiseRight, a gift card fundraising app where parents earn money for schools and organizations by shopping at partner brands. The existing feature-led onboarding wasn't moving the behavior change the product depended on, and first-order conversion was declining. I designed a <span class="body-bold">9-step mobile-first flow grounded in behavioral science principles,</span> validated it across two moderated research rounds, and shipped a redesign that produced <span class="body-bold">zero confidence drops in Round 2</span> across all participants. The single load-bearing insight: solving how participants understand the gift card mechanic was a prerequisite to every other improvement in the flow.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- =================================================================
+             DETAILS
+             ================================================================= -->
         <section id="details">
             <div class="two-col-grid">
                 <div class="details-item">
                     <h2 class="heading-2 m-b-1">Background</h2>
-                    <p class="body-regular">RaiseRight helps families fundraise by earning a percentage back on gift card purchases from brands they already shop at — groceries, gas, dining, travel, and more. Unlike traditional fundraising that asks families to sell products to others, RaiseRight works by shifting existing spending habits. The challenge is that this model requires users to understand a non-obvious mechanic (<span class="body-bold">buy a gift card, use it like normal, percentage goes to your organization</span>) and then commit to changing a core daily behavior: how they pay.</p>
+                    <p class="body-regular">RaiseRight is a fundraising app for parents raising money for schools, sports teams, and youth organizations. The core mechanic is unusual: participants <span class="body-bold">buy gift cards through the app for their own everyday use</span> (groceries, gas, restaurants), and a percentage of each purchase flows directly to their organization's fundraising goal. It turns regular spending into fundraising at no extra cost to the buyer, but it depends on participants understanding that they are the ones using the gift cards, not gifting them.</p>
                 </div>
                 <div class="details-item">
                     <h2 class="heading-2 m-b-1">The Problem</h2>
-                    <p class="body-regular">First-order conversion was declining. The existing post-registration onboarding was feature-led — it explained what RaiseRight does but didn't address <span class="body-bold">why users should change their behavior</span> or whether they believed they could. Users were signing up but not transacting. The onboarding treated conversion like a typical e-commerce funnel, but RaiseRight isn't a typical purchase — it's asking people to learn, understand, and decide to change how they pay, a core habit in their life.</p>
+                    <p class="body-regular">First-order conversion was trending down. The existing onboarding was feature-led: it explained what the app does and listed earning categories without engaging with the behavioral shift the product actually requires. Participants were arriving at the first purchase moment without enough belief, motivation, or understanding to act. The team needed an onboarding that did more than inform. <span class="body-bold">It needed to persuade.</span></p>
                 </div>
                 <div class="details-item">
                     <h2 class="heading-2 m-b-1">The Hypothesis</h2>
-                    <p class="body-regular">We hypothesized that adding <span class="body-bold">intentional friction</span> — goal-setting, self-reflection, and personalized projections — would increase the quality of users who complete onboarding and drive higher first-order conversion and retention. The bet was that spending more time on a guided, on-the-rails experience rooted in behavioral science would outperform a shorter, information-only flow. Leadership aligned on tolerating a <span class="body-bold">35–40% drop-off during onboarding</span> if it produced meaningfully higher post-onboarding activation.</p>
+                    <p class="body-regular">Intentional friction grounded in behavioral science would produce higher-quality activations than a faster, lower-friction flow. Users who understood the mechanic, set a real goal, and pictured their own brands in the flow would be more likely to make a first purchase, even if some dropped off along the way. Joe accepted a <span class="body-bold">35 to 40% drop-off tolerance</span> as the trade for higher conversion among the users who finished. This budget unlocked the design space for a deliberate, CBT-informed flow.</p>
                 </div>
                 <div class="details-item">
-                    <h2 class="heading-2 m-b-1">The Solution</h2>
-                    <p class="body-regular">A <span class="body-bold">9-step guided onboarding flow</span> grounded in Cognitive Behavioral Therapy (CBT) principles. Each step maps to a specific behavioral mechanism: value anchoring, goal specificity, cognitive restructuring (identifying and overcoming barriers), self-efficacy building (personalized earning projections), and behavioral activation (selecting brands and taking a first action). The flow was designed mobile-first, prototyped as a navigable Figma prototype with variables, and validated through moderated user research before A/B testing.</p>
+                    <h2 class="heading-2 m-b-1">The Approach</h2>
+                    <p class="body-regular">A 9-step CBT-informed onboarding flow, mobile-first, built as a clickable Figma prototype using Figma Variables for persistent selections across screens. Two rounds of moderated research validated the approach: Round 1 surfaced the core comprehension problem, <span class="body-bold">Round 2 validated the iterations with zero confidence drops across all participants.</span></p>
                 </div>
             </div>
         </section>
 
-        <section id="process" class="four-col-grid">
-            <div class="four-col-grid-item">
-                <div class="section-title m-b-1">
-                    <h2 class="heading-1">Discover & Frame</h2>
-                </div>
-                <a href="#discover">Competitor analysis (Calm, Noom, Headspace)</a>
-                <a href="#discover">CBT framework mapping</a>
-                <a href="#discover">Stakeholder alignment</a>
-                <a href="#discover">Hypothesis definition</a>
-            </div>
-            <div class="four-col-grid-item">
-                <div class="section-title m-b-1">
-                    <h2 class="heading-1">Design</h2>
-                </div>
-                <a href="#design">UX flow mapping</a>
-                <a href="#design">Wireframing (lo-fi)</a>
-                <a href="#design">Hi-fi prototype with Figma Variables</a>
-                <a href="#design">Navigable prototype for testing</a>
-            </div>
-            <div class="four-col-grid-item">
-                <div class="section-title m-b-1">
-                    <h2 class="heading-1">Research</h2>
-                </div>
-                <a href="#research">Research plan & script</a>
-                <a href="#research">7 moderated interviews (60 min)</a>
-                <a href="#research">Think-aloud protocol</a>
-                <a href="#research">Pre/post confidence measurement</a>
-            </div>
-            <div class="four-col-grid-item">
-                <div class="section-title m-b-1">
-                    <h2 class="heading-1">Synthesize & Iterate</h2>
-                </div>
-                <a href="#iterate">Emotional journey map</a>
-                <a href="#iterate">Friction heatmap</a>
-                <a href="#iterate">Drop-off risk flags</a>
-                <a href="#iterate">Prioritized design iterations</a>
+        <!-- =================================================================
+             PROCESS (sticky 5-column nav)
+             ================================================================= -->
+        <section id="process" aria-label="Case study process nav">
+            <div class="five-col-grid">
+                <a class="process-link" href="#discover">
+                    <span class="process-label">Discover &amp; Frame</span>
+                    <span class="process-sub">Behavioral shift framing and stakeholder alignment</span>
+                </a>
+                <a class="process-link" href="#design">
+                    <span class="process-label">Design</span>
+                    <span class="process-sub">9-step flow, wireframes, Variant D exploration</span>
+                </a>
+                <a class="process-link" href="#test">
+                    <span class="process-label">Test</span>
+                    <span class="process-sub">Round 1 moderated research with 7 participants</span>
+                </a>
+                <a class="process-link" href="#iterate">
+                    <span class="process-label">Iterate</span>
+                    <span class="process-sub">Prioritized changes and cross-functional decisions</span>
+                </a>
+                <a class="process-link" href="#validate">
+                    <span class="process-label">Validate</span>
+                    <span class="process-sub">Round 2 research, zero confidence drops</span>
+                </a>
             </div>
         </section>
 
+        <!-- =================================================================
+             DISCOVER & FRAME
+             ================================================================= -->
         <section id="discover">
             <div class="section-title m-b-2">
-                <h2 class="display-3">DISCOVER & FRAME</h2>
+                <h2 class="display-3">DISCOVER &amp; FRAME</h2>
             </div>
-            <p class="body-regular">Before designing any screens, I needed to understand why this onboarding was fundamentally different from a typical product onboarding. RaiseRight doesn't just need users to learn a feature — it needs them to commit to changing how they pay for everyday purchases. That's a <span class="body-bold">behavioral shift, not an information gap.</span> I started by studying apps that face the same challenge: products where success depends on sustained habit change, not just comprehension.</p>
+            <p class="body-regular lede">The first decision was a framing one. The team had been treating onboarding as an information gap: users needed to learn what the app does. The research evidence pointed in a different direction. This wasn't a knowledge problem. <span class="body-bold">It was a behavioral shift problem.</span> Users don't fail to use RaiseRight because they don't know what it is. They fail to use it because changing how you pay for groceries is genuinely hard, even when the upside is clear. Reframing onboarding as a guided behavioral shift, not a feature walkthrough, set the direction for everything that followed.</p>
 
             <div class="m-t-3">
                 <h3 class="heading-1 m-b-2">Competitor Analysis: How Habit-Change Apps Onboard</h3>
-                <div class="two-col-grid">
-                    <a data-fslightbox data-type="image" href="competitor-references.png">
-                        <img class="two-col-grid-item" src="https://placehold.co/800x500/EEEEEE/111111?text=competitor-references.png" alt="Competitor onboarding references — form inspo and shopping preferences patterns" loading="lazy">
-                    </a>
-                    <div class="two-col-grid-item">
-                        <p class="body-regular m-b-2">I analyzed onboarding flows from apps that require behavioral commitment — Calm, Noom, Headspace, Fitbit, and others. These apps don't just explain features; they use structured psychological techniques to build motivation before asking for action. The patterns I identified mapped directly to CBT principles that are well-established in behavioral psychology.</p>
-                        <p class="body-regular m-b-2">Apps like Calm and Noom <span class="body-bold">front-load emotional investment</span> by asking users to articulate why they're here before showing what the app does. Noom asks about your relationship with food before showing any diet features. Calm asks what's on your mind before offering meditation categories. This isn't just personalization — it's a CBT technique called <span class="body-bold">value anchoring</span> that increases persistence under difficulty.</p>
-                        <p class="body-regular m-b-2">Multi-select preference screens serve a dual purpose: they collect data for personalization, but they also function as <span class="body-bold">micro-commitments</span> — each tap is a small behavioral investment that increases the psychological cost of abandoning the flow.</p>
-                        <p class="body-regular">Earning projections and progress visualization map to the CBT concept of <span class="body-bold">self-efficacy building</span> — showing users evidence that their goal is achievable based on their own data, not abstract promises.</p>
-                    </div>
+                <a data-fslightbox="competitor-analysis" data-type="image" href="assets/References.png">
+                    <img src="assets/References.png" alt="Competitor onboarding references from Calm, Noom, and Headspace, showing key onboarding moments side by side" class="full-width-image" loading="lazy">
+                </a>
+                <div class="m-t-2">
+                    <p class="body-regular m-b-2">I studied three apps that built their onboarding around behavioral shift rather than feature explanation: Calm, Noom, and Headspace. Each is in a different category, but each solved the same underlying problem RaiseRight faces. They moved users from "this sounds nice" to "I'm going to actually do this," and they did it by <span class="body-bold">leveraging behavioral science principles</span> rather than feature lists.</p>
+                    <p class="body-regular m-b-2"><span class="body-bold">Value anchoring</span> appeared in all three. Each app showed users a personalized projection of what they could achieve before asking them to commit to anything. Calm shows hours of sleep gained. Noom shows pounds lost. Headspace shows minutes of calmer days ahead. The number wasn't the feature, it was the motivational anchor that made the rest of the flow feel worth the friction.</p>
+                    <p class="body-regular m-b-2"><span class="body-bold">Micro-commitments</span> showed up as a sequence pattern. None of these apps ask the user a single big question at the start. They ask a series of small ones: your name, your goal, your current habits, your reasons. By the time the user reaches the value proposition, they've already invested in the flow.</p>
+                    <p class="body-regular"><span class="body-bold">Self-efficacy framing</span> was the most subtle and the most important. These apps don't just tell users they can succeed. They show them, through projected outcomes and familiar inputs, that success is in reach for someone like them. This is what RaiseRight's existing onboarding lacked entirely.</p>
                 </div>
             </div>
 
             <div class="m-t-3">
                 <h3 class="heading-1 m-b-2">Mapping CBT to Onboarding Design</h3>
-                <p class="body-regular m-b-2">CBT provides a structured framework for behavior change that translates directly into UX design decisions. I mapped the core CBT principles to onboarding steps, creating a design rationale that tied every screen to a specific behavioral mechanism. This wasn't decoration — it was the architecture of the flow.</p>
-                <a data-fslightbox data-type="image" href="cbt-framework-mapping.png">
-                    <img class="full-width-image m-b-2" src="https://placehold.co/1200x500/EEEEEE/111111?text=cbt-framework-mapping.png" alt="CBT framework mapping — Phase 1 through 4 breakdown" loading="lazy">
-                </a>
-                <div class="two-col-grid m-t-2">
-                    <div class="two-col-grid-item">
-                        <p class="body-bold m-b-1">Phase 1 — Anchoring & Definition</p>
-                        <p class="body-regular">CBT: Goal Specificity + Value Alignment. Before asking users to do anything, connect the habit to their identity and values. "What are you fundraising for?" and "How much do you want to earn?" These aren't data collection — they're commitment devices. CBT research shows that <span class="body-bold">specific, personally meaningful goals increase persistence</span> more than vague intentions.</p>
+                <p class="body-regular m-b-2">I structured the flow around four CBT-informed phases. Each phase has a different cognitive job, and each step within a phase contributes to that phase's goal. This isn't a literal therapy framework, it's CBT applied as a design lens: <span class="body-bold">identify the limiting belief, restructure it, build evidence for the new belief, and translate belief into behavior.</span></p>
+                <div class="phase-grid m-t-2">
+                    <div>
+                        <p class="body-bold m-b-1">Phase 1 — Anchoring &amp; Definition (Steps 1 to 2)</p>
+                        <p class="body-regular">Establish what the app is and how it works before asking for anything. The value prop introduces social proof and platform credibility. The How To Earn screen, moved to Step 2 after Round 1 research, gives users <span class="body-bold">the mechanism explanation upfront</span> so every later screen has context.</p>
                     </div>
-                    <div class="two-col-grid-item">
-                        <p class="body-bold m-b-1">Phase 2 — Cognitive Restructuring</p>
-                        <p class="body-regular">CBT: Identifying Barriers + Psychoeducation. Surface the automatic negative thoughts that block action. "I'm nervous about linking my bank account." Instead of ignoring these fears, we externalize them. <span class="body-bold">Naming the barrier is the first step to dismantling it.</span> Then we provide targeted evidence that directly addresses each concern.</p>
+                    <div>
+                        <p class="body-bold m-b-1">Phase 2 — Cognitive Restructuring (Steps 3 to 4)</p>
+                        <p class="body-regular">Reframe the user's relationship to their own spending. Goal setting attaches a specific dollar amount and deadline to a real fundraising event. Habits gives users a sense that their existing spending is already most of the way there. The cognitive shift is from <span class="body-bold">"I'd have to do something new"</span> to <span class="body-bold">"I'd have to do something I'm already doing, slightly differently."</span></p>
                     </div>
-                    <div class="two-col-grid-item">
-                        <p class="body-bold m-b-1">Phase 3 — Reassurance & Evidence</p>
-                        <p class="body-regular">CBT: Building Self-Efficacy + Rationale. Replace fear with facts. A personalized earning projection — tied to the user's own spending categories and goal — shows that the behavior change is both achievable and worthwhile. The calculator <span class="body-bold">visualizes the gap between doing nothing and using RaiseRight,</span> framing the habit not as effort but as capturing lost value.</p>
+                    <div>
+                        <p class="body-bold m-b-1">Phase 3 — Reassurance &amp; Evidence (Steps 5 to 7)</p>
+                        <p class="body-regular">Build belief that the goal is achievable. The earning projection turns the user's selected categories into a personalized number. Favorites lets users see their own brands and confirm <span class="body-bold">"I already do this."</span> Notifications convert intention into commitment by enabling the bonus alerts that drive return visits.</p>
                     </div>
-                    <div class="two-col-grid-item">
-                        <p class="body-bold m-b-1">Phase 4 — Behavioral Activation</p>
-                        <p class="body-regular">CBT: Implementation Intentions + Minimum Viable Habit. We're not asking users to "shop." We're asking them to decide: "When I go to Safeway, I will use RaiseRight." Selecting specific brands creates an <span class="body-bold">implementation intention</span> — a concrete if-then plan that dramatically increases follow-through.</p>
+                    <div>
+                        <p class="body-bold m-b-1">Phase 4 — Behavioral Activation (Steps 8 to 9)</p>
+                        <p class="body-regular">Convert commitment into action. The transition celebration validates what the user has just done. The Take Action screen presents the user's selected brands as the primary action, <span class="body-bold">removing every barrier between the new belief and the first transaction.</span></p>
                     </div>
                 </div>
             </div>
 
             <div class="m-t-3">
-                <h3 class="heading-1 m-b-2">Stakeholder Alignment & Constraints</h3>
-                <p class="body-regular m-b-2">I worked with the Head of Product and PM to align on success metrics and risk tolerance before design began. Key decisions from our alignment:</p>
+                <h3 class="heading-1 m-b-2">Stakeholder Alignment &amp; Constraints</h3>
                 <div class="two-col-grid">
                     <div class="two-col-grid-item">
                         <p class="body-bold m-b-1">Acceptable drop-off</p>
-                        <p class="body-regular">Leadership was willing to tolerate <span class="body-bold">35–40% onboarding drop-off</span> if it produced higher-quality users who actually transact. This freed me to design a longer, more intentional flow without optimizing for completion rate alone.</p>
+                        <p class="body-regular">Joe agreed that <span class="body-bold">35 to 40% drop-off</span> through the flow was acceptable if the users who finished converted at meaningfully higher rates. This budget made the difference: it allowed for a 9-step flow when stakeholder instinct might have pushed for 3 or 4.</p>
                     </div>
                     <div class="two-col-grid-item">
                         <p class="body-bold m-b-1">Primary metrics</p>
-                        <p class="body-regular"><span class="body-bold">First-order conversion rate</span> (primary), second purchase rate (secondary). We'd measure these through an A/B test against the existing onboarding.</p>
+                        <p class="body-regular"><span class="body-bold">First-order conversion</span> was the top metric. Secondary measures included pre/post confidence delta from moderated research, used as the strategic success signal across both rounds.</p>
                     </div>
                     <div class="two-col-grid-item">
                         <p class="body-bold m-b-1">Micro-action hypothesis</p>
-                        <p class="body-regular">We identified specific in-flow actions we believed were the strongest indicators of habit adoption: setting a specific dollar goal, selecting spending categories, choosing 3+ brands, and enabling notifications.</p>
+                        <p class="body-regular">We agreed that micro-actions during onboarding, like setting a goal, selecting habits, choosing favorite brands, would correlate with first-purchase activation. Each micro-action was <span class="body-bold">both a research probe and a real product moment.</span></p>
                     </div>
                     <div class="two-col-grid-item">
-                        <p class="body-bold m-b-1">Mobile-first</p>
-                        <p class="body-regular">The flow had to work primarily on mobile, where the <span class="body-bold">majority of RaiseRight signups originate.</span></p>
+                        <p class="body-bold m-b-1">Mobile-first constraint</p>
+                        <p class="body-regular">The full flow was scoped to mobile from day one. Web onboarding would follow later, building on the design language and behavioral framing validated here.</p>
                     </div>
                 </div>
             </div>
 
-            <a data-fslightbox data-type="image" href="full-width-ux-flow.png">
-                <img class="full-width-image m-t-3" src="https://placehold.co/1400x600/EEEEEE/111111?text=full-width-ux-flow.png" alt="Updated Onboarding UX Flow — full diagram" loading="lazy">
-            </a>
         </section>
 
+        <!-- =================================================================
+             DESIGN
+             ================================================================= -->
         <section id="design">
             <div class="section-title m-b-2">
                 <h2 class="display-3">DESIGN</h2>
             </div>
-            <p class="body-regular">With the CBT framework and stakeholder alignment in place, I moved into design. The process went from UX flow mapping to wireframes to a fully interactive hi-fi prototype built with Figma Variables for the user research sessions.</p>
+            <p class="body-regular lede">The design work split into three threads running in parallel: shaping the 9-step flow as a coherent sequence, designing the screens to a level where they could carry real research, and iterating on the highest-risk screen (How To Earn) through a deliberate variant exploration. <span class="body-bold">The flow needed to feel inevitable to the participant,</span> which meant every step had to earn its place in the sequence.</p>
 
             <div class="m-t-3">
-                <h3 class="heading-1 m-b-2">UX Flow: The 9-Step Guided Onboarding</h3>
-                <a data-fslightbox data-type="image" href="onboarding-ux-flow.png">
-                    <img class="full-width-image m-b-2" src="https://placehold.co/1200x500/EEEEEE/111111?text=onboarding-ux-flow.png" alt="Updated Onboarding UX Flow and wireframe overview" loading="lazy">
-                </a>
-                <p class="body-regular m-b-2">I collaborated with the Head of Product to map out the full UX flow before any visual design. Each step was tied to a specific CBT principle and had a clear behavioral objective. The flow progresses through three emotional arcs: <span class="body-bold">curiosity</span> (Steps 1–2), <span class="body-bold">commitment</span> (Steps 3–5), and <span class="body-bold">activation</span> (Steps 6–9).</p>
-
+                <h3 class="heading-1 m-b-2">9-Step UX Flow</h3>
+                <button type="button" class="pdf-embed" data-pdf-src="assets/UX Flow.pdf" data-pdf-title="UX Flow — 9-Step Onboarding with CBT Phase Mapping" aria-label="Open UX flow diagram in full-screen viewer">
+                    <div class="pdf-skeleton">Loading UX Flow diagram…</div>
+                    <div class="pdf-expand" aria-hidden="true"><span>Expand</span></div>
+                </button>
                 <div class="two-col-grid m-t-2">
                     <div class="two-col-grid-item">
-                        <p class="body-bold m-b-1">Step 1 — Value Prop</p>
-                        <p class="body-regular m-b-2"><span class="body-bold">CBT: Social Proof + Trust.</span> Lead with credibility: $1,000+ earned by top families, 30 years of operation, 1,000+ brands. The goal isn't to explain the product — it's to establish that this is real, proven, and worth the user's time.</p>
-                        <p class="body-bold m-b-1">Step 2 — What For</p>
-                        <p class="body-regular m-b-2"><span class="body-bold">CBT: Value Anchoring.</span> "What are you fundraising for?" This connects the abstract act of buying gift cards to a concrete, emotionally resonant purpose — their child's tuition, sports, music.</p>
-                        <p class="body-bold m-b-1">Step 3 — Goal Setting</p>
-                        <p class="body-regular m-b-2"><span class="body-bold">CBT: Goal Specificity.</span> A dollar amount and timeline. The monthly breakdown ($37.50/mo instead of $450/year) makes the goal feel manageable. The micro-copy "People who set a goal are more likely to earn" uses social proof to boost commitment.</p>
-                        <p class="body-bold m-b-1">Step 4 — Current Habits</p>
-                        <p class="body-regular"><span class="body-bold">CBT: Baseline Assessment.</span> "Which of these do you do already?" — Groceries, gas, dining, shopping, travel. This primes users to see RaiseRight as fitting into their existing life rather than adding effort.</p>
+                        <p class="body-bold m-b-1">Step 1 — Value Prop (Anchoring)</p>
+                        <p class="body-regular m-b-2">Personalized greeting and three credibility stats: families earn $1,000+ per year, 30 years helping 50K+ organizations, 1,000+ brands. Sets the platform as credible before any ask.</p>
+                        <p class="body-bold m-b-1">Step 2 — How To Earn (Anchoring)</p>
+                        <p class="body-regular m-b-2">The mechanism explanation, moved here from its original Step 6 position after Round 1. A concrete brand example (<span class="body-bold">Gap at 14%</span>) lets users see real earnings before any projection screen.</p>
+                        <p class="body-bold m-b-1">Step 3 — Goal Setting (Cognitive Restructuring)</p>
+                        <p class="body-regular m-b-2">Goal amount with a due date picker (added after Round 1). Per-period breakdown logic adapts to the timeline: gaps under 56 days display in weeks, 56+ days in whole months.</p>
+                        <p class="body-bold m-b-1">Step 4 — Habits (Cognitive Restructuring)</p>
+                        <p class="body-regular m-b-2">Users select spending categories they already use. Reframes onboarding from "learn something new" to "tell us what you already do."</p>
+                        <p class="body-bold m-b-1">Step 5 — Earning Projection (Reassurance)</p>
+                        <p class="body-regular">A personalized number based on the user's selected categories, with category toggles that update the projection live. Tier movement (<span class="body-bold">Explorer → Champion</span>) adds motivational pull.</p>
                     </div>
                     <div class="two-col-grid-item">
-                        <p class="body-bold m-b-1">Step 5 — Projected Earnings</p>
-                        <p class="body-regular m-b-2"><span class="body-bold">CBT: Self-Efficacy Building.</span> A personalized calculator tied to their selected categories and goal. Users toggle categories on/off and watch the projection change in real-time. Tier badges (Explorer → Supporter → Champion) add a gamification layer.</p>
-                        <p class="body-bold m-b-1">Step 6 — How to Earn</p>
-                        <p class="body-regular m-b-2"><span class="body-bold">CBT: Psychoeducation.</span> The mechanism explanation: buy a gift card through RaiseRight, use it like normal, a percentage goes to your goal. Deliberately placed after goal-setting — users are more receptive to "how" once they've committed to "how much."</p>
-                        <p class="body-bold m-b-1">Step 7 — Favorites</p>
-                        <p class="body-regular m-b-2"><span class="body-bold">CBT: Implementation Intentions.</span> Select brands you already shop at. This creates the "I already do this" moment — the single strongest self-efficacy signal in the flow.</p>
-                        <p class="body-bold m-b-1">Steps 8–9 — Notifications & Take Action</p>
-                        <p class="body-regular"><span class="body-bold">CBT: Reinforcement Setup + Behavioral Activation.</span> Notifications framed as a goal accelerator, not a generic permission request. Step 9 closes the loop: you set a goal, you picked brands, now buy your first gift card.</p>
+                        <p class="body-bold m-b-1">Step 6 — Habits Confirmation (Reassurance)</p>
+                        <p class="body-regular m-b-2">Quick reinforcement of the categories selected. (Originally also contained How To Earn before Round 1's restructure.)</p>
+                        <p class="body-bold m-b-1">Step 7 — Favorites (Reassurance)</p>
+                        <p class="body-regular m-b-2">Users select brands they already shop at. The "3 or more brands" copy (reframed after Round 1) avoids the earning-cap misread.</p>
+                        <p class="body-bold m-b-1">Step 8 — Notifications (Activation)</p>
+                        <p class="body-regular m-b-2">Opt-in to bonus earning alerts. <span class="body-bold">The strongest, most consistent step in the entire flow across both rounds.</span></p>
+                        <p class="body-bold m-b-1">Step 9 — Take Action (Activation)</p>
+                        <p class="body-regular">Selected brands appear as the primary action, the user's first real transaction moment. The $5 reward (later removed) was originally positioned as a P.S. below the brand tiles.</p>
                     </div>
                 </div>
             </div>
 
             <div class="m-t-3">
                 <h3 class="heading-1 m-b-2">Wireframes</h3>
-                <div class="two-col-grid">
-                    <a data-fslightbox data-type="image" href="wireframes-concept.png">
-                        <img class="two-col-grid-item" src="https://placehold.co/800x500/EEEEEE/111111?text=wireframes-concept.png" alt="Onboarding concept wireframes — 5-screen lo-fi overview" loading="lazy">
+                <p class="body-regular m-b-2">The concept wireframes prioritized sequence and information density above all else. The driving question at this stage was not what each screen looks like, but whether the flow as a whole carries a participant from skepticism to action without losing momentum. I worked through layout decisions on cheap fidelity first so the higher-stakes screens (Goal Setting, Earning Projection, Take Action) could be tested in hi-fi without rebuilding the structure.</p>
+                <div class="mockup-grid">
+                    <a data-fslightbox="wireframes" data-type="image" href="assets/Wireframes/Goal.png">
+                        <img src="assets/Wireframes/Goal.png" alt="Wireframe: goal setting screen" loading="lazy">
                     </a>
-                    <div class="two-col-grid-item">
-                        <p class="body-regular m-b-2">I started with concept wireframes to validate the flow structure and screen sequencing with the team before investing in visual design. These wireframes focused on information hierarchy, interaction patterns (sliders, toggles, multi-select), and the emotional pacing of the experience.</p>
-                        <p class="body-regular">Key design decisions at this stage included the <span class="body-bold">goal slider with monthly breakdown,</span> the category toggle system for the earnings calculator, and the progressive disclosure of the earning mechanism.</p>
-                    </div>
+                    <a data-fslightbox="wireframes" data-type="image" href="assets/Wireframes/Calculator.png">
+                        <img src="assets/Wireframes/Calculator.png" alt="Wireframe: earning projection calculator" loading="lazy">
+                    </a>
+                    <a data-fslightbox="wireframes" data-type="image" href="assets/Wireframes/Barriers.png">
+                        <img src="assets/Wireframes/Barriers.png" alt="Wireframe: barriers screen" loading="lazy">
+                    </a>
+                    <a data-fslightbox="wireframes" data-type="image" href="assets/Wireframes/Overcome.png">
+                        <img src="assets/Wireframes/Overcome.png" alt="Wireframe: overcoming barriers screen" loading="lazy">
+                    </a>
+                    <a data-fslightbox="wireframes" data-type="image" href="assets/Wireframes/Take Action.png">
+                        <img src="assets/Wireframes/Take Action.png" alt="Wireframe: take action screen" loading="lazy">
+                    </a>
                 </div>
-                <a data-fslightbox data-type="image" href="wireframes-full-flow.png">
-                    <img class="full-width-image m-t-2" src="https://placehold.co/1200x500/EEEEEE/111111?text=wireframes-full-flow.png" alt="Onboarding entire flow wireframes — 8-screen overview" loading="lazy">
-                </a>
             </div>
 
             <div class="m-t-3">
-                <h3 class="heading-1 m-b-2">Hi-Fidelity Prototype with Figma Variables</h3>
-                <a data-fslightbox data-type="image" href="hifi-prototype.png">
-                    <img class="full-width-image m-b-2" src="https://placehold.co/1200x600/EEEEEE/111111?text=hifi-prototype.png" alt="Hi-fidelity prototype screens" loading="lazy">
-                </a>
-                <p class="body-regular">The final prototype was built in Figma using Variables to create a fully navigable, state-aware experience. Users could set a real dollar goal, toggle spending categories and see the earning projection <span class="body-bold">update dynamically,</span> select brands, and move through the entire 9-step flow as if using the real app. This level of fidelity was critical for the think-aloud research protocol — we needed participants to react to the experience, not puzzle over placeholder content. The prototype was designed mobile-first and shared via screen-share during 60-minute moderated research sessions.</p>
+                <h3 class="heading-1 m-b-2">Variant Exploration — How To Earn</h3>
+                <p class="body-regular">The How To Earn screen was the highest-risk screen in the flow. Round 1 made the case for moving it to Step 2 and rewriting it from scratch. I iterated through four variants:</p>
+                <div class="variant-grid">
+                    <div class="variant-card">
+                        <span class="variant-letter">A</span>
+                        <span class="variant-status">Tested · Round 2 Group A</span>
+                        <p class="body-regular">Introduced a concrete brand example (<span class="body-bold">Gap at 14%</span>) with a three-line breakdown of the mechanic, no icons.</p>
+                    </div>
+                    <div class="variant-card">
+                        <span class="variant-letter">B</span>
+                        <span class="variant-status">Tested · Round 2 Group B</span>
+                        <p class="body-regular">Added a four-ways-to-earn navigation row at the top, with tabs for gift cards, online shopping, dining, and travel. Each tab carried its own example.</p>
+                    </div>
+                    <div class="variant-card">
+                        <span class="variant-letter">C</span>
+                        <span class="variant-status">Cut before research</span>
+                        <p class="body-regular">Interim build that combined the icon row with denser content. Stakeholder review made it clear the layout proportions were wrong before it reached research.</p>
+                    </div>
+                    <div class="variant-card shipped">
+                        <span class="variant-letter">D</span>
+                        <span class="variant-status">Shipped resolution</span>
+                        <p class="body-regular">Compact icon row for orientation, behavior-change headline, before/after contrast that doesn't name credit or debit cards, two-step gift card breakdown using Joe's exact copy, credibility footer line. <span class="body-bold">Resolved the Joe/Michelle tension.</span></p>
+                    </div>
+                </div>
+                <p class="body-regular m-t-2">Variant D was the version that resolved a real cross-functional tension between Joe's preference for a before/after comparison and Michelle's concern about leading with credit card comparisons that would invite "but my card gives 5%" pushback. The decision was to ship Variant B for the Round 2 test and monitor icon tap rates as a fake door signal, with a suggested <span class="body-bold">30% threshold</span> to justify investing in per-vertical content in a future round.</p>
+            </div>
+
+            <div class="m-t-3">
+                <h3 class="heading-1 m-b-2">Hi-Fidelity Prototype</h3>
+                <p class="body-regular m-b-2">The hi-fi prototype was built in Figma using Variables so participant selections persisted across screens. When a participant chose a goal amount in Step 3, that amount appeared on the projection screen in Step 5 and on the Take Action screen in Step 9. When they selected favorite brands in Step 7, those exact brands appeared as the recommended starting points in Step 9. <span class="body-bold">This persistence was essential for moderated research:</span> it let participants experience the flow as if it were already a real product, which is what made the pre/post confidence delta measurement meaningful.</p>
+
+                <div class="mockup-grid">
+                    <a data-fslightbox="r1-mockups" data-type="image" href="assets/TBD Round 1 - Mockups and Prototype/1. Value Prop.png">
+                        <img src="assets/TBD Round 1 - Mockups and Prototype/1. Value Prop.png" alt="Round 1 mockup: Step 1, Value Prop" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r1-mockups" data-type="image" href="assets/TBD Round 1 - Mockups and Prototype/2. What for.png">
+                        <img src="assets/TBD Round 1 - Mockups and Prototype/2. What for.png" alt="Round 1 mockup: Step 2, What for" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r1-mockups" data-type="image" href="assets/TBD Round 1 - Mockups and Prototype/3. Goal Setting.png">
+                        <img src="assets/TBD Round 1 - Mockups and Prototype/3. Goal Setting.png" alt="Round 1 mockup: Step 3, Goal Setting" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r1-mockups" data-type="image" href="assets/TBD Round 1 - Mockups and Prototype/4. Current Habits.png">
+                        <img src="assets/TBD Round 1 - Mockups and Prototype/4. Current Habits.png" alt="Round 1 mockup: Step 4, Current Habits" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r1-mockups" data-type="image" href="assets/TBD Round 1 - Mockups and Prototype/5. Goal Projection - New.png">
+                        <img src="assets/TBD Round 1 - Mockups and Prototype/5. Goal Projection - New.png" alt="Round 1 mockup: Step 5, Goal Projection" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r1-mockups" data-type="image" href="assets/TBD Round 1 - Mockups and Prototype/Fist Step - Value Prop.png">
+                        <img src="assets/TBD Round 1 - Mockups and Prototype/Fist Step - Value Prop.png" alt="Round 1 mockup: Step 6, How To Earn (original position before resequence)" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r1-mockups" data-type="image" href="assets/TBD Round 1 - Mockups and Prototype/7. Favorites.png">
+                        <img src="assets/TBD Round 1 - Mockups and Prototype/7. Favorites.png" alt="Round 1 mockup: Step 7, Favorites" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r1-mockups" data-type="image" href="assets/TBD Round 1 - Mockups and Prototype/7. Favorites Nudge.png">
+                        <img src="assets/TBD Round 1 - Mockups and Prototype/7. Favorites Nudge.png" alt="Round 1 mockup: Step 7 nudge variant" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r1-mockups" data-type="image" href="assets/TBD Round 1 - Mockups and Prototype/8. Notifications.png">
+                        <img src="assets/TBD Round 1 - Mockups and Prototype/8. Notifications.png" alt="Round 1 mockup: Step 8, Notifications" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r1-mockups" data-type="image" href="assets/TBD Round 1 - Mockups and Prototype/10. Take Action.png">
+                        <img src="assets/TBD Round 1 - Mockups and Prototype/10. Take Action.png" alt="Round 1 mockup: Step 9, Take Action" loading="lazy">
+                    </a>
+                </div>
+
+                <div class="video-wrap m-t-2">
+                    <!-- TODO: add <track kind="captions"> when transcript is available -->
+                    <video controls playsinline preload="metadata" aria-label="Round 1 prototype walkthrough video">
+                        <source src="assets/TBD Round 1 - Mockups and Prototype/rout1-prototype.mov" type="video/mp4">
+                        Your browser does not support embedded video. The Round 1 prototype walkthrough is in the assets folder.
+                    </video>
+                </div>
+                <p class="video-caption">Round 1 prototype walkthrough used in moderated research sessions</p>
             </div>
         </section>
 
-        <section id="research">
+        <!-- =================================================================
+             TEST — ROUND 1
+             ================================================================= -->
+        <section id="test">
             <div class="section-title m-b-2">
-                <h2 class="display-3">RESEARCH</h2>
+                <h2 class="display-3">TEST — ROUND 1</h2>
             </div>
-            <p class="body-regular">With the prototype ready, I planned and led a moderated research study to validate the CBT-informed onboarding before committing to an A/B test. This wasn't a usability test — it was a <span class="body-bold">behavioral validation study.</span> I needed to understand not just whether users could complete the flow, but whether it changed how they felt about committing to the behavior change.</p>
+            <p class="body-regular lede">Round 1 was a behavioral validation study, not a usability test. The goal wasn't to find tap targets and broken flows. <span class="body-bold">It was to find out whether a CBT-informed onboarding actually moves user belief.</span> I ran 7 moderated sessions over three days in March, walking each participant through the clickable prototype using a think-aloud protocol and a pre/post confidence probe.</p>
 
             <div class="m-t-3">
                 <h3 class="heading-1 m-b-2">Research Plan</h3>
                 <div class="two-col-grid">
                     <div class="two-col-grid-item">
-                        <p class="body-regular m-b-2">I designed a 45–60 minute moderated interview protocol with three parts: a warm-up to understand the participant's fundraising context, a guided walkthrough of the prototype using a think-aloud protocol, and a reflection debrief.</p>
-                        <p class="body-regular">The critical measurement was a <span class="body-bold">pre/post confidence delta.</span> Before seeing the prototype, I asked each participant: "On a scale of 1 to 5, how likely are you to change how you pay for everyday purchases to support a fundraising goal in a cashback app?" After completing the flow, I asked the same question but specifically referencing RaiseRight. A positive delta — post score higher than pre — was the primary success signal.</p>
+                        <p class="body-bold m-b-1">Methodology</p>
+                        <p class="body-regular">Pre/post confidence delta. Before the walkthrough, each participant rated themselves on a scale of 1 to 5: <span class="body-bold">"How likely are you to change how you pay for everyday purchases to support a fundraising goal in a cashback app?"</span> After the walkthrough, the same question, with "specifically with RaiseRight" appended. The delta is the primary signal. Did the flow move them?</p>
                     </div>
                     <div class="two-col-grid-item">
                         <p class="body-bold m-b-1">Participants</p>
-                        <p class="body-regular m-b-2">I recruited 7 participants through UserInterviews.com (1 no-show from 8 recruited). The cohort was intentionally diverse across age, income, geography, family size, and device type. All were parents actively involved in school fundraising who buy gift cards at least monthly.</p>
-                        <p class="body-regular">Key profiles included a <span class="body-bold">clinical psychologist</span> (uniquely qualified to evaluate the CBT framing), a "points hacker" who'd previously used RaiseRight (stress test for the value proposition), a <span class="body-bold">family of six on a strict budget</span> (where earning projections carry real financial weight), and a father familiar with scrip programs (fastest comprehension baseline).</p>
+                        <p class="body-regular m-b-1">7 active fundraising parents recruited via userinterviews.com. Mixed income brackets, mixed gift card familiarity, mixed prior cashback app experience.</p>
+                        <p class="body-bold m-b-1">Notable profiles</p>
+                        <ul class="stat-list">
+                            <li class="body-regular"><span class="body-bold">M.P.</span> had prior scrip program experience from his kids' schools, which became a critical proof-of-concept reference point</li>
+                            <li class="body-regular"><span class="body-bold">J.B.</span> was a self-described "points hacker" who had previously used RaiseRight, making her a useful skeptic test</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
+            <button type="button" class="pdf-embed" data-pdf-src="assets/Round 1 - Research Plan.pdf" data-pdf-title="Round 1 — Research Plan" aria-label="Round 1 Research Plan. Click to expand in viewer.">
+                <span class="pdf-skeleton">Loading Round 1 Research Plan…</span>
+                <span class="pdf-expand">Click to expand</span>
+            </button>
+
             <div class="m-t-3">
                 <h3 class="heading-1 m-b-2">Key Findings</h3>
+
                 <p class="body-bold m-b-1">Emotional Journey Map</p>
-                <a data-fslightbox data-type="image" href="emotional-journey-map.png">
-                    <img class="full-width-image m-b-2" src="https://placehold.co/1200x500/EEEEEE/111111?text=emotional-journey-map.png" alt="Emotional journey map — line chart with annotated steps" loading="lazy">
-                </a>
-                <p class="body-regular m-b-3">The emotional journey across the 9 steps followed a clear pattern: <span class="body-bold">strong initial curiosity</span> (Step 1, score 4.0), a dip through the commitment-heavy middle steps where projection credibility and mechanic confusion created friction (Steps 5–6, score 3.0), a <span class="body-bold">peak at notifications</span> where 7/7 participants agreed without hesitation (Step 8, score 4.5), and a mixed landing at the Take Action screen where copy contradictions undermined the activation moment (Step 9, score 3.2).</p>
+                <button type="button" class="pdf-embed" data-pdf-src="assets/Round 1 - Emotional Map.pdf" data-pdf-title="Round 1 — Emotional Journey Map" aria-label="Round 1 Emotional Journey Map. Click to expand in viewer.">
+                    <span class="pdf-skeleton">Loading Emotional Journey Map…</span>
+                    <span class="pdf-expand">Click to expand</span>
+                </button>
+                <p class="body-regular m-b-3">The journey traced from cautious curiosity at the value prop (4.0 average sentiment) to a sharp drop at the projection screen (3.0) and How To Earn screen (2.5), then partial recovery at Favorites (3.5) and a final mixed-to-confused state at Take Action (3.2). The shape of the curve told the story: trust was built early, broken in the middle, partially recovered, and left unresolved at the end. <span class="body-bold">The two lowest points were both about the same underlying problem.</span></p>
 
                 <p class="body-bold m-b-1">Pre/Post Confidence Delta</p>
-                <a data-fslightbox data-type="image" href="confidence-delta-chart.png">
-                    <img class="full-width-image m-b-2" src="https://placehold.co/1200x500/EEEEEE/111111?text=confidence-delta-chart.png" alt="Pre/Post Confidence Delta Analysis chart" loading="lazy">
-                </a>
-                <p class="body-regular m-b-3"><span class="body-bold">5 of 7 participants showed a positive or maintained-high confidence delta</span> — the primary success signal for the study. The average post-score was 4.5/5. Two participants showed negative deltas, but for distinct and instructive reasons: one entered at 5/5 and dropped due to unresolved confusion about the gift card mechanic (design-recoverable), and the other was a prior RaiseRight user whose ROI calculus against credit card travel points was a product-market fit issue for her specific profile, not an onboarding design failure.</p>
+                <button type="button" class="pdf-embed" data-pdf-src="assets/Round 1 - Confidence Score.pdf" data-pdf-title="Round 1 — Pre/Post Confidence Delta" aria-label="Round 1 Pre/Post Confidence Delta. Click to expand in viewer.">
+                    <span class="pdf-skeleton">Loading Pre/Post Confidence Delta…</span>
+                    <span class="pdf-expand">Click to expand</span>
+                </button>
+                <p class="body-regular m-b-2">Five of seven participants finished with a positive delta. Two dropped. The drops are the interesting data:</p>
+                <ul class="stat-list m-b-3">
+                    <li class="body-regular"><span class="body-bold">M.M., 5 → 3 (−2):</span> The largest drop in the study and the most design-actionable. She entered at maximum confidence, called the flow "effortless," and then lost two full points because the projection felt unbelievable without a mechanism explanation and the gift card mechanic stayed unresolved at the end. She named external research about gift cards as her next step before using the app.</li>
+                    <li class="body-regular"><span class="body-bold">J.B., 3 → 2 (−1):</span> Important outlier. J.B. is a points hacker who previously used RaiseRight, ran the math on the projection screen, and concluded writing a check was a better ROI than spending $5K to $7K to earn $500 back. Her drop reflects product-market fit for her profile, not a fixable UX issue.</li>
+                </ul>
+                <p class="body-regular">The split between M.M.'s design-recoverable drop and J.B.'s product-fit drop is the lens that shaped what to iterate on. <span class="body-bold">M.M.'s issues were exactly what I would fix. J.B.'s were not.</span></p>
             </div>
 
             <div class="m-t-3">
                 <h3 class="heading-1 m-b-2">Critical Insights</h3>
                 <div class="two-col-grid">
                     <div class="two-col-grid-item">
-                        <div class="m-b-2">
-                            <p class="body-bold m-b-1">1. The Gift Card Mental Model Never Resolves</p>
-                            <p class="body-regular">No participant read the gift card mechanic as obvious — all guessed. 5 of 7 were still confused at the end of the flow. One participant said she'd leave the app to verify it on Google before committing. <span class="body-bold">Highest-severity drop-off risk in the entire study.</span></p>
+                        <div class="insight-item">
+                            <span class="insight-num">01</span>
+                            <p class="insight-title">Gift card mental model never resolves</p>
+                            <p class="body-regular">Seven of seven participants guessed the mechanic correctly, but no one read it as obvious. Five of seven were still confused at the end of the flow. <span class="body-bold">This was the load-bearing problem: every downstream issue depended on it.</span></p>
                         </div>
-                        <div class="m-b-2">
-                            <p class="body-bold m-b-1">2. Earning Projections Trigger Skepticism Before Self-Efficacy</p>
-                            <p class="body-regular">4 of 7 described projected earnings over $1,000 as "unbelievable" or "suspicious" until they saw specific brand percentages. Users saw the "how much" before understanding the "how," which <span class="body-bold">inverted the intended confidence-building sequence.</span></p>
+                        <div class="insight-item">
+                            <span class="insight-num">02</span>
+                            <p class="insight-title">Projections trigger skepticism before self-efficacy</p>
+                            <p class="body-regular">Three of seven called the earning numbers "almost unbelievable" without understanding the mechanism first. The "See how it's calculated" accordion made things worse for two of them, because it explained the math without explaining where the money comes from.</p>
                         </div>
-                        <div class="m-b-2">
-                            <p class="body-bold m-b-1">3. The Deadline Gap in Goal Setting</p>
-                            <p class="body-regular">6 of 7 participants fundraise on event-driven windows of 6 weeks to 6 months — not annual cycles. The fixed one-year timeframe felt abstract and disconnected from their actual urgency, <span class="body-bold">reducing the accountability the goal was designed to create.</span></p>
+                        <div class="insight-item">
+                            <span class="insight-num">03</span>
+                            <p class="insight-title">Deadline gap in goal setting</p>
+                            <p class="body-regular">Six of seven fundraise on event-based windows of 6 weeks to 6 months, not annual cycles. The fixed one-year timeframe felt abstract and detached from any real deadline. Three participants explicitly asked for a due date input instead of a duration.</p>
                         </div>
                     </div>
                     <div class="two-col-grid-item">
-                        <div class="m-b-2">
-                            <p class="body-bold m-b-1">4. Brand Selection Cap Creates Frustration</p>
-                            <p class="body-regular">5 of 7 wanted to select more than 3 brands. One participant concluded she was permanently earning-locked to only those 3 brands. The copy "Choose 3 favorite brands" was ambiguous enough to produce <span class="body-bold">three different misreadings.</span></p>
+                        <div class="insight-item">
+                            <span class="insight-num">04</span>
+                            <p class="insight-title">Brand selection cap creates frustration</p>
+                            <p class="body-regular">Five of seven were frustrated by the 3-brand cap. Four of seven drew the more serious conclusion that the cap also limits where they can earn, not just what's shown. The copy "Choose 3 favorite brands" was <span class="body-bold">ambiguous enough to produce that misread.</span></p>
                         </div>
-                        <div class="m-b-2">
-                            <p class="body-bold m-b-1">5. "How to Earn" Belongs Earlier</p>
-                            <p class="body-regular">5 of 7 wanted to understand the earning mechanism before being asked to set a goal or evaluate projections. In the final interview, when I moved the "How to Earn" screen to Step 2, the participant showed <span class="body-bold">significantly higher comprehension and confidence</span> across the entire remaining flow.</p>
+                        <div class="insight-item">
+                            <span class="insight-num">05</span>
+                            <p class="insight-title">"How to Earn" belongs earlier</p>
+                            <p class="body-regular">Six of seven felt the placement at Step 6 was too late. The mechanic explanation needed to come <span class="body-bold">before</span> the projection screen, not after.</p>
                         </div>
-                        <div class="m-b-2">
-                            <p class="body-bold m-b-1">6. The $5 Reward Copy Contradicts Itself</p>
-                            <p class="body-regular">"Reward Unlocked" implies the user has something; "Place 3 orders to earn" implies they don't. This ambiguity at the activation moment caused 5 of 7 to choose "Explore on my own" instead of tapping a brand card — <span class="body-bold">the intended first action failed to convert.</span></p>
+                        <div class="insight-item">
+                            <span class="insight-num">06</span>
+                            <p class="insight-title">$5 reward copy contradicts itself</p>
+                            <p class="body-regular">Three of seven were confused by "$5 reward unlocked" conflicting with "place 3 orders to earn." Four of seven didn't know whether the $5 goes to them or to the fundraising goal. Five of seven chose "Explore on my own" over the recommended brand cards.</p>
                         </div>
                     </div>
                 </div>
-                <p class="body-bold m-b-1 m-t-2">Friction Heatmap</p>
-                <a data-fslightbox data-type="image" href="friction-heatmap.png">
-                    <img class="full-width-image m-b-2" src="https://placehold.co/1200x500/EEEEEE/111111?text=friction-heatmap.png" alt="Friction heatmap table across all 9 steps" loading="lazy">
-                </a>
-                <p class="body-regular">The top friction type was <span class="body-bold">copy and language,</span> affecting 6 of 9 steps. Most fixes were low-effort wording changes, not redesigns. The second highest was feature expectation, affecting 7 of 9 steps. Trust and credibility friction was concentrated entirely in Step 5 — fix the mechanism explanation and it likely resolves.</p>
             </div>
 
-            <!-- Participant Quotes -->
+            <div class="m-t-3">
+                <h3 class="heading-1 m-b-2">Friction Heatmap</h3>
+                <button type="button" class="pdf-embed" data-pdf-src="assets/Round 1 - Friction Heatmap.pdf" data-pdf-title="Round 1 — Friction Heatmap" aria-label="Round 1 Friction Heatmap. Click to expand in viewer.">
+                    <span class="pdf-skeleton">Loading Friction Heatmap…</span>
+                    <span class="pdf-expand">Click to expand</span>
+                </button>
+                <p class="body-regular">The heatmap concentrated friction in two places: Step 5 (Projection) and Step 6 (How To Earn). Almost every problem in the flow traced back to copy and language (highest friction type) or feature expectation (second highest). Trust and credibility friction was isolated entirely to Step 5, which meant <span class="body-bold">fixing the mechanism explanation upstream would likely resolve it.</span></p>
+
+                <details class="m-t-2">
+                    <summary class="body-bold" style="cursor: pointer;">See full risk flag breakdown</summary>
+                    <button type="button" class="pdf-embed m-t-2" data-pdf-src="assets/Round 1 - Drop Off Flags.pdf" data-pdf-title="Round 1 — Drop Off Risk Flags" aria-label="Round 1 Drop Off Risk Flags. Click to expand in viewer.">
+                        <span class="pdf-skeleton">Loading Risk Flags…</span>
+                        <span class="pdf-expand">Click to expand</span>
+                    </button>
+                </details>
+            </div>
+
             <div class="m-t-3">
                 <h3 class="heading-1 m-b-2">Participant Quotes</h3>
                 <div class="two-col-grid">
                     <div class="two-col-grid-item">
-                        <p class="body-regular m-b-2"><i>"Seeing it as $37 a month instead of $450 total makes this feel like something I can actually achieve. A large number is overwhelming for a family on a tight budget, but the breakdown makes it feel manageable and hopeful."</i><br><span class="body-bold">— M.S.</span></p>
-                        <p class="body-regular m-b-2"><i>"I don't feel like I'm spending extra money to fundraise. It feels like I'm just shifting my budget to these brands. It doesn't feel like a barrier; it just fits into my normal life."</i><br><span class="body-bold">— E.B.</span></p>
-                        <p class="body-regular"><i>"I don't want to be just a 'Supporter.' Seeing that bar move to 'Champion' makes me want to stay there. It catches your eye and makes you wonder if you're doing the bare minimum or really helping the cause."</i><br><span class="body-bold">— V.T.</span></p>
+                        <blockquote class="pull-quote">
+                            "I'm piecing it together. Buy gift cards, use them, earn back. I think."
+                            <cite>E.B., on the How To Earn screen</cite>
+                        </blockquote>
+                        <blockquote class="pull-quote">
+                            "These numbers sound almost unbelievable. I need to see the percentages or how it works first."
+                            <cite>M.M., on the Projection screen</cite>
+                        </blockquote>
+                        <blockquote class="pull-quote">
+                            "I go to Target, Publix, Costco, and Trader Joe's all in one day. Why can I only pick 3?"
+                            <cite>M.M., on the Favorites screen</cite>
+                        </blockquote>
                     </div>
                     <div class="two-col-grid-item">
-                        <p class="body-regular m-b-2"><i>"I'd be way more likely to do this than sell things out of a catalog or ask my family for money. I can just make my own purchases and it applies."</i><br><span class="body-bold">— M.S.</span></p>
-                        <p class="body-regular m-b-2"><i>"Seeing my favorited brands at the end shows that there was a purpose for the questions I answered. It wasn't just arbitrary; it made the reward feel earned and relevant to me."</i><br><span class="body-bold">— M.P.</span></p>
-                        <p class="body-regular"><i>"It says reward unlocked; but I still have to place 3 orders. So do I have it or don't I?"</i><br><span class="body-bold">— E.I.</span></p>
+                        <blockquote class="pull-quote">
+                            "It says reward unlocked, but I still have to place 3 orders. So do I have it or don't I?"
+                            <cite>E.I., on the Take Action screen</cite>
+                        </blockquote>
+                        <blockquote class="pull-quote">
+                            "$500 a month feels manageable. $6,000 all at once is scary."
+                            <cite>M.M., on the Goal Setting screen</cite>
+                        </blockquote>
+                        <blockquote class="pull-quote">
+                            "It's 9% back every other day at Chipotle. That adds up."
+                            <cite>M.P., on the value proposition</cite>
+                        </blockquote>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- =================================================================
+             ITERATE
+             ================================================================= -->
         <section id="iterate">
             <div class="section-title m-b-2">
                 <h2 class="display-3">ITERATE</h2>
             </div>
-            <p class="body-regular">Research findings translated directly into a prioritized set of design iterations, categorized by severity: <span class="body-bold">P1</span> (critical — blocking activation), <span class="body-bold">P2</span> (high — degrading experience quality). Each recommendation tied back to specific participant data and behavioral signals.</p>
+            <p class="body-regular lede">With the findings synthesized, I built a P1/P2 priority framework grounded in the severity of each flag and the leverage of each change. <span class="body-bold">P1 items were changes that, if shipped, would unblock multiple downstream issues.</span> P2 items were high-value but not gating.</p>
+
+            <div class="m-t-3">
+                <h3 class="heading-1 m-b-2">Iterations Overview</h3>
+                <button type="button" class="pdf-embed" data-pdf-src="assets/Round 1 - Iteration.pdf" data-pdf-title="Round 1 — Recommended Iterations" aria-label="Round 1 Recommended Iterations. Click to expand in viewer.">
+                    <span class="pdf-skeleton">Loading Iterations overview…</span>
+                    <span class="pdf-expand">Click to expand</span>
+                </button>
+            </div>
 
             <div class="m-t-3">
                 <h3 class="heading-1 m-b-2">Recommended Design Changes</h3>
-                <a data-fslightbox data-type="image" href="iterations-overview.png">
-                    <img class="full-width-image m-b-2" src="https://placehold.co/1200x500/EEEEEE/111111?text=iterations-overview.png" alt="Recommended iterations overview cards" loading="lazy">
-                </a>
-                <div class="two-col-grid m-t-2">
+                <div class="two-col-grid">
                     <div class="two-col-grid-item">
-                        <p class="body-bold m-b-1">P1 — Clarify the gift card mechanic (Steps 6 + 9)</p>
-                        <p class="body-regular m-b-2">Replace abstract step labels with a single concrete sentence: "Buy a gift card through RaiseRight, use it like normal, and a percentage goes straight to your goal." Add a persistent info icon on brand cards in Step 9. <span class="body-bold">Evidence: 7/7 guessed the mechanic; no one read it as obvious.</span></p>
-
-                        <p class="body-bold m-b-1">P1 — Replace fixed timeframe with a due date picker (Step 3)</p>
-                        <p class="body-regular m-b-2">Allow users to set a specific fundraising deadline instead of defaulting to one year. Monthly breakdown updates dynamically. <span class="body-bold">Evidence: 6/7 fundraise on short windows (6 weeks to 6 months).</span></p>
-
-                        <p class="body-bold m-b-1">P1 — Fix the $5 reward copy (Step 9)</p>
-                        <p class="body-regular m-b-2">Separate the unlock state from the earn condition. Replace "Reward Unlocked" with forward-looking framing: "Place 3 orders in 30 days and earn a $5 bonus for your goal." Explicitly state the $5 goes to the fundraising goal. <span class="body-bold">Evidence: 3/7 confused by contradiction; 4/7 didn't know where $5 goes.</span></p>
-
-                        <p class="body-bold m-b-1">P1 — Move "How to Earn" to Step 2 (Flow restructuring)</p>
-                        <p class="body-regular">Tested in final interview — participant showed significantly higher comprehension across the entire remaining flow. Embed a mechanism reminder inside the Step 5 accordion. <span class="body-bold">Evidence: 5/7 wanted the mechanic earlier; 3/7 found projections unbelievable without it.</span></p>
+                        <div class="iteration-item">
+                            <span class="priority-tag p1">P1</span>
+                            <p class="iteration-title">Clarify the gift card mechanic</p>
+                            <p class="body-regular">Replace the abstract three-step layout on the How To Earn screen with a single concrete sentence: <span class="body-bold">"Buy a gift card through RaiseRight, use it like normal, and a percentage goes straight to your goal."</span> Add a persistent info icon on the brand cards in Step 9. Directly addresses Flag 01, the highest-severity drop-off risk in the study.</p>
+                        </div>
+                        <div class="iteration-item">
+                            <span class="priority-tag p1">P1</span>
+                            <p class="iteration-title">Move "How to Earn" to Step 2</p>
+                            <p class="body-regular">Resequence the flow so the mechanism explanation comes before the projection screen, not after. Four of seven Round 1 participants explicitly wanted this. <span class="body-bold">The relocation makes every downstream screen carry context it previously lacked.</span></p>
+                        </div>
+                        <div class="iteration-item">
+                            <span class="priority-tag p1">P1</span>
+                            <p class="iteration-title">Replace fixed timeframe with due date picker</p>
+                            <p class="body-regular">Swap the one-year fixed timeframe for a due date picker, consistent with the existing web product. The monthly breakdown updates dynamically based on the selected date. Default to one year for users without a specific event in mind.</p>
+                        </div>
+                        <div class="iteration-item">
+                            <span class="priority-tag p1">P1</span>
+                            <p class="iteration-title">Fix the $5 reward copy</p>
+                            <p class="body-regular">Replace "Reward unlocked" with forward-looking framing that sets a clear condition: <span class="body-bold">"Place 3 orders in 30 days and earn a $5 bonus."</span> Explicitly state that the $5 goes to the user's wallet, not the fundraising goal. (Later removed entirely after Round 2.)</p>
+                        </div>
                     </div>
                     <div class="two-col-grid-item">
-                        <p class="body-bold m-b-1">P2 — Reframe brand selection as "at least 3" (Step 7)</p>
-                        <p class="body-regular m-b-2">Update copy and interaction so users can select more. Surface top earners from the full selection on Step 9. <span class="body-bold">Evidence: 5/7 wanted more; 1/7 believed she was earning-locked permanently.</span></p>
+                        <div class="iteration-item">
+                            <span class="priority-tag p2">P2</span>
+                            <p class="iteration-title">Reframe brand selection as "at least 3"</p>
+                            <p class="body-regular">Change the copy from "Choose 3 favorite brands" to "Select 3 or more." Update the button behavior so users can select more if they want. Resolves both the selection frustration and the earning-limit misread.</p>
+                        </div>
+                        <div class="iteration-item">
+                            <span class="priority-tag p2">P2</span>
+                            <p class="iteration-title">Add a type-in field for goal amount</p>
+                            <p class="body-regular">Make the goal amount directly editable. The slider works for most users but breaks down for large amounts; E.I. set a $17K tuition goal that's effectively unusable with the current input.</p>
+                        </div>
+                        <div class="iteration-item">
+                            <span class="priority-tag p2">P2</span>
+                            <p class="iteration-title">Add per-brand earning rates to the projection</p>
+                            <p class="body-regular">Inside the "See how it's calculated" accordion, show per-brand rates rather than aggregate category averages (e.g., Starbucks 9%, Walmart 4%). Three of seven Round 1 participants wanted to verify the math at the granular level.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                        <p class="body-bold m-b-1">P2 — Add type-in field for goal amount (Step 3)</p>
-                        <p class="body-regular m-b-2">Make the number directly editable by tapping. Slider remains as visual aid. <span class="body-bold">Evidence: 3/7 requested type-in; one user would enter $17K tuition — slider fails completely at that scale.</span></p>
+            <aside class="callout">
+                <span class="callout-label">Cross-Functional Decisions</span>
+                <h3 class="heading-2">The hardest iteration work wasn't the design changes</h3>
+                <p class="body-regular">It was the cross-functional decisions that surrounded them. Two moments stand out.</p>
+                <p class="body-regular"><span class="body-bold">Joe and Michelle had opposing instincts on the How To Earn screen.</span> Joe pushed for a sharp before/after framing that referenced credit and debit card earnings percentages. Michelle pushed back, arguing it would invite unfavorable comparisons ("but my card gives 5%") and undermine the four-mode earning ecosystem the brand positions equally. I proposed a middle ground: a compact four-ways-to-earn icon row at the top for orientation, followed by a before/after contrast that shows the outcome difference without naming credit or debit cards at all. This became the structural backbone of Variant D and resolved the tension without compromising either stakeholder's underlying concern.</p>
+                <p class="body-regular"><span class="body-bold">Late-stage marketing copy suggestions arrived after research had already validated the existing copy.</span> Michelle proposed warmer, more conversational tone changes ("Awesome, let's help you reach that goal!") for screens that had tested well. I pushed back, drawing a distinction that mattered: marketing copy and product copy serve different cognitive contexts. Marketing copy is for browsing users with attention to spare. Product copy in an onboarding flow is for users in the middle of a task where every extra word adds load. I proposed treating the tonal changes as an A/B test or a future research round rather than swapping validated copy on faith. Then I followed up with a warmer note acknowledging the directional goal of conversational tone, because the relationship is what makes the next round of work possible.</p>
+            </aside>
+        </section>
 
-                        <p class="body-bold m-b-1">P2 — Add per-brand earning rates to projection (Step 5)</p>
-                        <p class="body-regular">Show specific percentages (e.g., "Starbucks: 9%, Walmart: 4%") inside the accordion. Let skeptical users verify the math themselves. <span class="body-bold">Evidence: Multiple participants ran mental audits; per-brand data resolved skepticism when available.</span></p>
+        <!-- =================================================================
+             VALIDATE — ROUND 2
+             ================================================================= -->
+        <section id="validate">
+            <div class="section-title m-b-2">
+                <h2 class="display-3">VALIDATE — ROUND 2</h2>
+            </div>
+            <p class="body-regular lede">Round 2 wasn't about finding new problems. It was about validating that the iterations actually moved the needle on the issues Round 1 surfaced. I ran 6 moderated sessions over four days in April, splitting participants into two groups to test a specific open question alongside the broader validation: <span class="body-bold">does the gift card example alone build enough understanding, or do users need exposure to all four earning modes?</span></p>
+
+            <div class="m-t-3">
+                <h3 class="heading-1 m-b-2">Research Plan</h3>
+                <div class="two-col-grid">
+                    <div class="two-col-grid-item">
+                        <p class="body-bold m-b-1">Methodology</p>
+                        <p class="body-regular">Same pre/post confidence delta as Round 1, with comparable language so the results are directly comparable across rounds. Same think-aloud protocol, same screen-share moderated format.</p>
+                    </div>
+                    <div class="two-col-grid-item">
+                        <p class="body-bold m-b-1">Participants</p>
+                        <p class="body-regular">6 active fundraising parents, recruited via userinterviews.com, split into two groups of 3.</p>
+                        <ul class="stat-list">
+                            <li class="body-regular"><span class="body-bold">Group A:</span> No icons, gift card example only. Participants: A.K., S.R. (Sara), Sh.R. (Shivani).</li>
+                            <li class="body-regular"><span class="body-bold">Group B:</span> Icons + navigation, one example per earning type. Participants: B.H., J.F., L.K.</li>
+                        </ul>
+                    </div>
+                </div>
+                <button type="button" class="pdf-embed m-t-2" data-pdf-src="assets/Round 2 - Research Plan.pdf" data-pdf-title="Round 2 — Research Plan" aria-label="Round 2 Research Plan. Click to expand in viewer.">
+                    <span class="pdf-skeleton">Loading Round 2 Research Plan…</span>
+                    <span class="pdf-expand">Click to expand</span>
+                </button>
+            </div>
+
+            <!-- Zero Confidence Drops payoff -->
+            <div class="payoff m-t-3">
+                <div class="payoff-stat">0</div>
+                <div class="payoff-label">Zero confidence drops in Round 2</div>
+                <p class="payoff-sub body-regular">Every participant finished with a confidence score equal to or higher than where they started. Two participants gained two full points. <span class="body-bold">The two largest gains came from the participants who entered most skeptical,</span> which is the persuasion arc the CBT framing was designed to produce.</p>
+                <div class="delta-chart" aria-label="Round 2 Pre/Post Confidence Delta">
+                    <div class="delta-label">Sh.R.</div>
+                    <div class="delta-bar"><div class="delta-fill" style="left:20%; width:40%;"></div></div>
+                    <div class="delta-value">2 → 4</div>
+
+                    <div class="delta-label">S.R.</div>
+                    <div class="delta-bar"><div class="delta-fill" style="left:60%; width:20%;"></div></div>
+                    <div class="delta-value">4 → 5</div>
+
+                    <div class="delta-label">A.K.</div>
+                    <div class="delta-bar"><div class="delta-fill" style="left:60%; width:20%;"></div></div>
+                    <div class="delta-value">4 → 5</div>
+
+                    <div class="delta-label">B.H.</div>
+                    <div class="delta-bar"><div class="delta-fill" style="left:40%; width:40%;"></div></div>
+                    <div class="delta-value">3 → 5</div>
+
+                    <div class="delta-label">J.F.</div>
+                    <div class="delta-bar"><div class="delta-fill" style="left:40%; width:20%;"></div></div>
+                    <div class="delta-value">3 → 4</div>
+
+                    <div class="delta-label">L.K.</div>
+                    <div class="delta-bar"><div class="delta-fill" style="left:80%; width:0%; min-width:4px; background:var(--green);"></div></div>
+                    <div class="delta-value">5 → 5</div>
+                </div>
+            </div>
+
+            <button type="button" class="pdf-embed" data-pdf-src="assets/Round 2 - Confidence Score.pdf" data-pdf-title="Round 2 — Pre/Post Confidence Delta" aria-label="Round 2 Pre/Post Confidence Delta. Click to expand in viewer.">
+                <span class="pdf-skeleton">Loading Round 2 Confidence Score…</span>
+                <span class="pdf-expand">Click to expand</span>
+            </button>
+
+            <button type="button" class="pdf-embed" data-pdf-src="assets/Round 2 - Emotional Map.pdf" data-pdf-title="Round 2 — Emotional Journey Map" aria-label="Round 2 Emotional Journey Map. Click to expand in viewer.">
+                <span class="pdf-skeleton">Loading Round 2 Emotional Map…</span>
+                <span class="pdf-expand">Click to expand</span>
+            </button>
+
+            <div class="m-t-3">
+                <h3 class="heading-1 m-b-2">What Round 2 Confirmed</h3>
+                <div class="two-col-grid">
+                    <div class="two-col-grid-item">
+                        <p class="body-bold m-b-1">Projection skepticism resolved</p>
+                        <p class="body-regular m-b-2">With the mechanism explanation moved to Step 2, users hit the projection screen with the Gap example already in mind. The "almost unbelievable" reaction from Round 1 didn't reappear. <span class="body-bold">B.H. went from 3 to 5</span> specifically because the projection screen became persuasive.</p>
+                        <p class="body-bold m-b-1">Gift card mechanic landed for most</p>
+                        <p class="body-regular">The concrete brand example up front did the comprehension work. L.K. described the new mental model accurately and unprompted. Some residual confusion remained at the Take Action screen, narrower than Round 1 and more recoverable.</p>
+                    </div>
+                    <div class="two-col-grid-item">
+                        <p class="body-bold m-b-1">Date picker resonated</p>
+                        <p class="body-regular m-b-2">Users engaged with the date picker rather than leaving it at the default, and the per-period breakdown adapted accordingly.</p>
+                        <p class="body-bold m-b-1">Energy at the end of the flow</p>
+                        <p class="body-regular">Users finished the flow with momentum, not fatigue. A.K. went in expecting tedium and came out the other side surprised. <span class="body-bold">That tonal shift was the strategic friction hypothesis paying off in real participant words.</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="decision-block">
+                <span class="decision-label">Decision Moment</span>
+                <h3 class="heading-2 m-b-1">Removing the $5 reward</h3>
+                <p class="body-regular">The $5 reward block did not fully resolve in Round 2. Even with the revised hierarchy (reward repositioned as a P.S. below the brand tiles) and the rewritten copy, participants were still uncertain about what the reward was and where it would go. Rather than continue iterating on copy that was working against the screen's main goal (drive the first transaction), <span class="body-bold">we made the call to remove the reward element entirely.</span> Cutting a feature is a harder design decision than polishing one, and it was the right one. The Take Action screen could now do its actual job without competing claims for attention.</p>
+            </div>
+
+            <div class="m-t-3">
+                <h3 class="heading-1 m-b-2">Variant Comparison Outcome</h3>
+                <p class="body-regular">Group A (gift card example only) and Group B (icons + navigation) produced comparable comprehension results. Group B participants did engage with the navigation row, but they didn't feel they needed all four examples to feel confident before continuing. The decision was to ship Variant B (the icons + gift card detail layout that became part of Variant D) and monitor icon tap rates as a fake door test. <span class="body-bold">Suggested threshold: a 30% tap rate would justify investing in per-vertical content in a future research round.</span></p>
+                <h3 class="heading-1 m-b-1 m-t-3">Round 2 Recommended Iterations</h3>
+                <p class="body-regular m-b-2">The full set of refinements surfaced by Round 2 testing, prioritized for the next round of work.</p>
+                <button type="button" class="pdf-embed" data-pdf-src="assets/Round 2 - Iteration.pdf" data-pdf-title="Round 2 — Recommended Iterations" aria-label="Round 2 Recommended Iterations. Click to expand in viewer.">
+                    <span class="pdf-skeleton">Loading Round 2 Recommended Iterations…</span>
+                    <span class="pdf-expand">Click to expand</span>
+                </button>
+            </div>
+
+            <div class="m-t-3">
+                <h3 class="heading-1 m-b-2">Round 2 Mockups</h3>
+                <div class="mockup-grid">
+                    <a data-fslightbox="r2-mockups" data-type="image" href="assets/TBD Round 2 - Mockups and Prototype/1. Value Prop.png">
+                        <img src="assets/TBD Round 2 - Mockups and Prototype/1. Value Prop.png" alt="Round 2 mockup: Step 1, Value Prop" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r2-mockups" data-type="image" href="assets/TBD Round 2 - Mockups and Prototype/2. How To Earn - Variant C.png">
+                        <img src="assets/TBD Round 2 - Mockups and Prototype/2. How To Earn - Variant C.png" alt="Round 2 mockup: Step 2, How To Earn, Variant C" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r2-mockups" data-type="image" href="assets/TBD Round 2 - Mockups and Prototype/3. What for.png">
+                        <img src="assets/TBD Round 2 - Mockups and Prototype/3. What for.png" alt="Round 2 mockup: Step 3, What for" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r2-mockups" data-type="image" href="assets/TBD Round 2 - Mockups and Prototype/4. Goal Setting - Date Picker.png">
+                        <img src="assets/TBD Round 2 - Mockups and Prototype/4. Goal Setting - Date Picker.png" alt="Round 2 mockup: Step 4, Goal Setting with Date Picker" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r2-mockups" data-type="image" href="assets/TBD Round 2 - Mockups and Prototype/5. Current Habits.png">
+                        <img src="assets/TBD Round 2 - Mockups and Prototype/5. Current Habits.png" alt="Round 2 mockup: Step 5, Current Habits" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r2-mockups" data-type="image" href="assets/TBD Round 2 - Mockups and Prototype/6. Goal Projection.png">
+                        <img src="assets/TBD Round 2 - Mockups and Prototype/6. Goal Projection.png" alt="Round 2 mockup: Step 6, Goal Projection" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r2-mockups" data-type="image" href="assets/TBD Round 2 - Mockups and Prototype/7. Favorites.png">
+                        <img src="assets/TBD Round 2 - Mockups and Prototype/7. Favorites.png" alt="Round 2 mockup: Step 7, Favorites" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r2-mockups" data-type="image" href="assets/TBD Round 2 - Mockups and Prototype/8. Notifications.png">
+                        <img src="assets/TBD Round 2 - Mockups and Prototype/8. Notifications.png" alt="Round 2 mockup: Step 8, Notifications" loading="lazy">
+                    </a>
+                    <a data-fslightbox="r2-mockups" data-type="image" href="assets/TBD Round 2 - Mockups and Prototype/10. Take Action.png">
+                        <img src="assets/TBD Round 2 - Mockups and Prototype/10. Take Action.png" alt="Round 2 mockup: Step 9, Take Action" loading="lazy">
+                    </a>
+                </div>
+
+                <div class="video-wrap m-t-2">
+                    <video controls playsinline preload="metadata" aria-label="Round 2 prototype walkthrough video">
+                        <source src="assets/TBD Round 2 - Mockups and Prototype/round 2 - prototype.mov" type="video/mp4">
+                        Your browser does not support embedded video. The Round 2 prototype walkthrough is in the assets folder.
+                    </video>
+                </div>
+                <p class="video-caption">Round 2 prototype walkthrough, used in the validation sessions</p>
+            </div>
+
+            <div class="m-t-3">
+                <h3 class="heading-1 m-b-2">Round 2 Participant Quotes</h3>
+                <div class="two-col-grid">
+                    <div class="two-col-grid-item">
+                        <blockquote class="pull-quote">
+                            "Whatever I spend, whether it's gift cards, shopping, travel, or restaurant, a certain portion goes to the goal."
+                            <cite>L.K., explaining the mechanic in her own words after Step 2</cite>
+                        </blockquote>
+                        <blockquote class="pull-quote">
+                            "I think it would be a 5 if I really could make that much money back towards our tuition and our program fees. I would strongly consider that."
+                            <cite>B.H., on the projection screen</cite>
+                        </blockquote>
+                    </div>
+                    <div class="two-col-grid-item">
+                        <blockquote class="pull-quote">
+                            "I was expecting it to be something kind of tedious, but it was actually kind of fun."
+                            <cite>A.K., at the end of the flow</cite>
+                        </blockquote>
+                        <blockquote class="pull-quote">
+                            "It makes sense to allow us to change the date for sure. We should have flexibility."
+                            <cite>L.K., on the date picker</cite>
+                        </blockquote>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- =================================================================
+             CONCLUSION
+             ================================================================= -->
         <section id="conclusion">
             <div class="section-title m-b-2">
                 <h2 class="display-3">CONCLUSION</h2>
             </div>
-            <p class="body-regular m-b-2">The core hypothesis — that added friction via goal-setting and psychoeducation increases commitment — was largely supported. 6 of 7 users reported positive or maintained-high interest in the app (4.5/5 average post-score) specifically because they saw how shifting their existing spending toward brands they already use could meet their fundraising goals. The CBT framework successfully moved users from abstract curiosity to concrete behavioral intention.</p>
-            <p class="body-regular m-b-3">The research also revealed that <span class="body-bold">the sequence of information matters as much as the information itself.</span> Showing earning projections before explaining the earning mechanism inverted the confidence-building arc. Moving "How to Earn" to Step 2 — tested in the final interview — resolved this and produced the highest comprehension score of any session.</p>
+
+            <p class="body-regular m-b-2">The shape of this project is the arc of a comprehension problem. Round 1 found that no participant understood the gift card mechanic without guessing, and that this one issue cascaded into every other friction point in the flow. The earning projection felt unbelievable because users didn't understand where the money came from. The Take Action screen converted poorly because users weren't sure what they were activating. The fixed timeframe felt abstract because the goal had no concrete purchase pattern attached. <span class="body-bold">Solving the mechanic was the prerequisite to solving everything downstream.</span> That single insight reshaped the sequence, the copy, and the variant exploration that followed.</p>
+
+            <p class="body-regular m-b-3">Round 2 validated the iterations with zero confidence drops across all participants and two full-point gains from the most skeptical entrants. The reward element was removed rather than further iterated on, because the screen worked better without it. The flow was handed off to engineering with the structural decisions validated and the next signals defined: icon tap rates as a fake door test for whether to invest in per-vertical content, and an open question on whether tonal copy changes would survive an A/B test against the research-validated baseline.</p>
 
             <h3 class="heading-1 m-b-1">Key Results</h3>
             <ul class="m-b-3">
-                <li class="body-regular"><span class="body-bold">5 of 7</span> participants showed a positive pre/post confidence delta — the primary success metric.</li>
-                <li class="body-regular"><span class="body-bold">7 of 7</span> would enable notifications when framed as a goal accelerator — the strongest unanimity in the study.</li>
-                <li class="body-regular"><span class="body-bold">6 of 7</span> said the onboarding length felt "about right" or "manageable" — validating the intentional friction hypothesis.</li>
-                <li class="body-regular"><span class="body-bold">4.5/5</span> average post-onboarding confidence score — up from 3.9/5 pre-score.</li>
+                <li class="body-regular"><span class="body-bold">Round 2: zero confidence drops</span> across all 6 participants, including two full-point gains from the most skeptical entrants.</li>
+                <li class="body-regular"><span class="body-bold">Round 1: 5 of 7 positive confidence delta,</span> with both drops driven by issues that Round 2 specifically resolved.</li>
+                <li class="body-regular"><span class="body-bold">7 of 7</span> participants in Round 1 enabled notifications, the strongest and most consistent step in the entire flow across both rounds.</li>
+                <li class="body-regular"><span class="body-bold">6 of 7</span> participants in Round 1 said the onboarding length felt right (or wanted it longer), validating the strategic friction hypothesis.</li>
+                <li class="body-regular"><span class="body-bold">$5 reward element removed</span> from the Take Action screen based on validated Round 2 evidence that it was working against the flow's main goal.</li>
             </ul>
 
+            <h3 class="heading-1 m-b-1">What's Next</h3>
+            <p class="body-regular m-b-3">Engineering handoff was approaching when research wrapped. The next monitoring plan tracks icon tap rates on the How To Earn screen as a fake door signal, with a suggested 30% threshold to justify investing in per-vertical content for online shopping, dining, and travel earning modes. Marketing's proposed tonal changes remain an open question, scoped as a future A/B test or research round rather than a swap on validated copy. The coordinator experience, designed by Claire for web, is the natural next surface for the same behavioral framing.</p>
+
             <h3 class="heading-1 m-b-1">Key Learnings</h3>
-            <ul class="m-b-3">
-                <li class="body-regular"><span class="body-bold">Behavioral onboarding works, but sequence is everything.</span> The CBT framework was validated — users who understood the "why" before the "how much" showed higher confidence and lower friction. The single most impactful iteration was a flow resequence, not a visual redesign.</li>
-                <li class="body-regular"><span class="body-bold">Trust is built with specifics, not totals.</span> Aggregate earning projections triggered skepticism. Per-brand percentages triggered mental math that resolved into belief. Users trust numbers they can verify against their own experience.</li>
-                <li class="body-regular"><span class="body-bold">Name the fear to dismantle it.</span> The barriers screen (cognitive restructuring) was one of the most effective steps. Users felt validated rather than judged, and the targeted rebuttals directly addressed their automatic negative thoughts. This is CBT working exactly as intended in a product context.</li>
-                <li class="body-regular"><span class="body-bold">Copy is the highest-leverage design material.</span> The top friction type across the entire study was copy and language — affecting 6 of 9 steps. Most fixes were wording changes, not interaction redesigns. In behavioral onboarding, every word is a design decision.</li>
+            <ul>
+                <li class="body-regular"><span class="body-bold">Sequence is the highest-leverage lever in onboarding.</span> Moving the How To Earn screen from Step 6 to Step 2 did more for comprehension than any copy rewrite. The right information at the wrong moment doesn't land.</li>
+                <li class="body-regular"><span class="body-bold">Trust comes from specifics, not polish.</span> A real brand at a real percentage ("Gap at 14%") moved the projection screen from unbelievable to credible. Generic illustrations would not have.</li>
+                <li class="body-regular"><span class="body-bold">Name the fear directly.</span> The gift card mechanic only resolved when the flow explicitly told users that they buy the card and they use it themselves. Every indirect framing failed in Round 1.</li>
+                <li class="body-regular"><span class="body-bold">Copy is the highest-leverage lever inside the flow.</span> Most of the Round 1 friction concentrated in copy and language, not interaction design or layout. Word changes did more than redesigns.</li>
+                <li class="body-regular"><span class="body-bold">A validation round changes the story, not just the data.</span> Round 2 let the case study end on "this worked" instead of "we recommend." That distinction matters for what designers can say about their own work.</li>
             </ul>
         </section>
 
     </main>
 
     <footer-component></footer-component>
+
+    <!-- ====================================================================
+         PDF MODAL VIEWER (single instance, controlled by raiseright.js)
+         ==================================================================== -->
+    <div id="pdfModal" class="pdf-modal" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle" aria-hidden="true">
+        <div class="pdf-modal-toolbar" role="toolbar" aria-label="PDF viewer controls">
+            <span class="pdf-modal-title" id="pdfModalTitle"></span>
+            <button type="button" data-action="prev" aria-label="Previous page">‹</button>
+            <span class="pdf-page-counter" aria-live="polite">1 of 1</span>
+            <button type="button" data-action="next" aria-label="Next page">›</button>
+            <button type="button" data-action="zoom-out" aria-label="Zoom out">−</button>
+            <button type="button" data-action="zoom-in" aria-label="Zoom in">+</button>
+            <button type="button" data-action="fit-width" aria-label="Fit to width">Fit width</button>
+            <button type="button" data-action="fit-page" aria-label="Fit to page">Fit page</button>
+            <button type="button" data-action="close" class="pdf-modal-close" aria-label="Close viewer">Close</button>
+        </div>
+        <div class="pdf-modal-viewport">
+            <canvas class="pdf-modal-canvas" aria-label="PDF page content"></canvas>
+        </div>
+    </div>
 </body>
 
 </html>
